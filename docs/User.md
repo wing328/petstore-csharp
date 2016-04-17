@@ -1,5 +1,4 @@
-# .User
-
+# IO.Swagger.Model.User
 ## Properties
 
 Name | Type | Description | Notes
