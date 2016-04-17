@@ -44,6 +44,7 @@ namespace Example
 
             try
             {
+                // Add a new pet to the store
                 apiInstance.AddPet(body);
             }
             catch (Exception e)
@@ -101,10 +102,11 @@ namespace Example
 
             var apiInstance = new PetApi();
             var petId = 789;  // long? | Pet id to delete
-            var apiKey = apiKey_example;  // string | 
+            var apiKey = apiKey_example;  // string |  (optional) 
 
             try
             {
+                // Deletes a pet
                 apiInstance.DeletePet(petId, apiKey);
             }
             catch (Exception e)
@@ -166,6 +168,7 @@ namespace Example
 
             try
             {
+                // Finds Pets by status
                 List&lt;Pet&gt; result = apiInstance.FindPetsByStatus(status);
                 Debug.WriteLine(result);
             }
@@ -227,6 +230,7 @@ namespace Example
 
             try
             {
+                // Finds Pets by tags
                 List&lt;Pet&gt; result = apiInstance.FindPetsByTags(tags);
                 Debug.WriteLine(result);
             }
@@ -290,6 +294,7 @@ namespace Example
 
             try
             {
+                // Find pet by ID
                 Pet result = apiInstance.GetPetById(petId);
                 Debug.WriteLine(result);
             }
@@ -351,6 +356,7 @@ namespace Example
 
             try
             {
+                // Update an existing pet
                 apiInstance.UpdatePet(body);
             }
             catch (Exception e)
@@ -408,11 +414,12 @@ namespace Example
 
             var apiInstance = new PetApi();
             var petId = 789;  // long? | ID of pet that needs to be updated
-            var name = name_example;  // string | Updated name of the pet
-            var status = status_example;  // string | Updated status of the pet
+            var name = name_example;  // string | Updated name of the pet (optional) 
+            var status = status_example;  // string | Updated status of the pet (optional) 
 
             try
             {
+                // Updates a pet in the store with form data
                 apiInstance.UpdatePetWithForm(petId, name, status);
             }
             catch (Exception e)
@@ -472,11 +479,12 @@ namespace Example
 
             var apiInstance = new PetApi();
             var petId = 789;  // long? | ID of pet to update
-            var additionalMetadata = additionalMetadata_example;  // string | Additional data to pass to server
-            var file = new System.IO.Stream(); // System.IO.Stream | file to upload
+            var additionalMetadata = additionalMetadata_example;  // string | Additional data to pass to server (optional) 
+            var file = new System.IO.Stream(); // System.IO.Stream | file to upload (optional) 
 
             try
             {
+                // uploads an image
                 ApiResponse result = apiInstance.UploadFile(petId, additionalMetadata, file);
                 Debug.WriteLine(result);
             }

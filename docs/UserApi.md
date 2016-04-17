@@ -41,6 +41,7 @@ namespace Example
 
             try
             {
+                // Create user
                 apiInstance.CreateUser(body);
             }
             catch (Exception e)
@@ -98,6 +99,7 @@ namespace Example
 
             try
             {
+                // Creates list of users with given input array
                 apiInstance.CreateUsersWithArrayInput(body);
             }
             catch (Exception e)
@@ -155,6 +157,7 @@ namespace Example
 
             try
             {
+                // Creates list of users with given input array
                 apiInstance.CreateUsersWithListInput(body);
             }
             catch (Exception e)
@@ -212,6 +215,7 @@ namespace Example
 
             try
             {
+                // Delete user
                 apiInstance.DeleteUser(username);
             }
             catch (Exception e)
@@ -269,6 +273,7 @@ namespace Example
 
             try
             {
+                // Get user by user name
                 User result = apiInstance.GetUserByName(username);
                 Debug.WriteLine(result);
             }
@@ -328,6 +333,7 @@ namespace Example
 
             try
             {
+                // Logs user into the system
                 string result = apiInstance.LoginUser(username, password);
                 Debug.WriteLine(result);
             }
@@ -386,6 +392,7 @@ namespace Example
 
             try
             {
+                // Logs out current logged in user session
                 apiInstance.LogoutUser();
             }
             catch (Exception e)
@@ -441,6 +448,7 @@ namespace Example
 
             try
             {
+                // Updated user
                 apiInstance.UpdateUser(username, body);
             }
             catch (Exception e)

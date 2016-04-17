@@ -37,6 +37,7 @@ namespace Example
 
             try
             {
+                // Delete purchase order by ID
                 apiInstance.DeleteOrder(orderId);
             }
             catch (Exception e)
@@ -98,6 +99,7 @@ namespace Example
 
             try
             {
+                // Returns pet inventories by status
                 Dictionary&lt;string, int?&gt; result = apiInstance.GetInventory();
                 Debug.WriteLine(result);
             }
@@ -153,6 +155,7 @@ namespace Example
 
             try
             {
+                // Find purchase order by ID
                 Order result = apiInstance.GetOrderById(orderId);
                 Debug.WriteLine(result);
             }
@@ -211,6 +214,7 @@ namespace Example
 
             try
             {
+                // Place an order for a pet
                 Order result = apiInstance.PlaceOrder(body);
                 Debug.WriteLine(result);
             }
