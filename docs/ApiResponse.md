@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ApiResponse
+# .ApiResponse
 
 ## Properties
 

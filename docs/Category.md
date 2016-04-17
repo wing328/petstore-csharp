@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Category
+# .Category
 
 ## Properties
 

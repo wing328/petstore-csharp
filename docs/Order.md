@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Order
+# .Order
 
 ## Properties
 

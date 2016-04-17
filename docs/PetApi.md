@@ -185,7 +185,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | [**List&lt;string&gt;**](string.md)| Status values that need to be considered for filter | 
+ **status** | [**List<string>**](string.md)| Status values that need to be considered for filter | 
 
 ### Return type
 
@@ -247,7 +247,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tags** | [**List&lt;string&gt;**](string.md)| Tags to filter by | 
+ **tags** | [**List<string>**](string.md)| Tags to filter by | 
 
 ### Return type
 
