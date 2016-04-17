@@ -4,18 +4,18 @@ All URIs are relative to *http://petstore.swagger.io/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateUser**](UserApi.md#CreateUser) | **POST** /user | Create user
-[**CreateUsersWithArrayInput**](UserApi.md#CreateUsersWithArrayInput) | **POST** /user/createWithArray | Creates list of users with given input array
-[**CreateUsersWithListInput**](UserApi.md#CreateUsersWithListInput) | **POST** /user/createWithList | Creates list of users with given input array
-[**DeleteUser**](UserApi.md#DeleteUser) | **DELETE** /user/{username} | Delete user
-[**GetUserByName**](UserApi.md#GetUserByName) | **GET** /user/{username} | Get user by user name
-[**LoginUser**](UserApi.md#LoginUser) | **GET** /user/login | Logs user into the system
-[**LogoutUser**](UserApi.md#LogoutUser) | **GET** /user/logout | Logs out current logged in user session
-[**UpdateUser**](UserApi.md#UpdateUser) | **PUT** /user/{username} | Updated user
+[**CreateUser**](UserApi.md#createuser) | **POST** /user | Create user
+[**CreateUsersWithArrayInput**](UserApi.md#createuserswitharrayinput) | **POST** /user/createWithArray | Creates list of users with given input array
+[**CreateUsersWithListInput**](UserApi.md#createuserswithlistinput) | **POST** /user/createWithList | Creates list of users with given input array
+[**DeleteUser**](UserApi.md#deleteuser) | **DELETE** /user/{username} | Delete user
+[**GetUserByName**](UserApi.md#getuserbyname) | **GET** /user/{username} | Get user by user name
+[**LoginUser**](UserApi.md#loginuser) | **GET** /user/login | Logs user into the system
+[**LogoutUser**](UserApi.md#logoutuser) | **GET** /user/logout | Logs out current logged in user session
+[**UpdateUser**](UserApi.md#updateuser) | **PUT** /user/{username} | Updated user
 
 
 # **CreateUser**
-> CreateUser(body)
+> void CreateUser (User body)
 
 Create user
 
@@ -27,20 +27,24 @@ using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
 using IO.Swagger.Client;
-using IO.Swagger.Module;
+using IO.Swagger.Model;
 
 namespace Example
 {
     public class CreateUserExample
     {
-        public void main(){
+        public void main()
+        {
             
             var apiInstance = new UserApi();
             var body = new User(); // User | Created user object
 
-            try {
+            try
+            {
                 apiInstance.CreateUser(body);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Debug.Print("Exception when calling UserApi.CreateUser: " + e.Message );
             }
         }
@@ -52,7 +56,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**User**](User.md)| Created user object | [optional] 
+ **body** | [**User**](User.md)| Created user object | 
 
 ### Return type
 
@@ -65,10 +69,10 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: application/xml, application/json
 
 # **CreateUsersWithArrayInput**
-> CreateUsersWithArrayInput(body)
+> void CreateUsersWithArrayInput (List<User> body)
 
 Creates list of users with given input array
 
@@ -80,20 +84,24 @@ using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
 using IO.Swagger.Client;
-using IO.Swagger.Module;
+using IO.Swagger.Model;
 
 namespace Example
 {
     public class CreateUsersWithArrayInputExample
     {
-        public void main(){
+        public void main()
+        {
             
             var apiInstance = new UserApi();
             var body = new List<User>(); // List<User> | List of user object
 
-            try {
+            try
+            {
                 apiInstance.CreateUsersWithArrayInput(body);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Debug.Print("Exception when calling UserApi.CreateUsersWithArrayInput: " + e.Message );
             }
         }
@@ -105,7 +113,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**List&lt;User&gt;**](User.md)| List of user object | [optional] 
+ **body** | [**List&lt;User&gt;**](User.md)| List of user object | 
 
 ### Return type
 
@@ -118,10 +126,10 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: application/xml, application/json
 
 # **CreateUsersWithListInput**
-> CreateUsersWithListInput(body)
+> void CreateUsersWithListInput (List<User> body)
 
 Creates list of users with given input array
 
@@ -133,20 +141,24 @@ using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
 using IO.Swagger.Client;
-using IO.Swagger.Module;
+using IO.Swagger.Model;
 
 namespace Example
 {
     public class CreateUsersWithListInputExample
     {
-        public void main(){
+        public void main()
+        {
             
             var apiInstance = new UserApi();
             var body = new List<User>(); // List<User> | List of user object
 
-            try {
+            try
+            {
                 apiInstance.CreateUsersWithListInput(body);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Debug.Print("Exception when calling UserApi.CreateUsersWithListInput: " + e.Message );
             }
         }
@@ -158,7 +170,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**List&lt;User&gt;**](User.md)| List of user object | [optional] 
+ **body** | [**List&lt;User&gt;**](User.md)| List of user object | 
 
 ### Return type
 
@@ -171,10 +183,10 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: application/xml, application/json
 
 # **DeleteUser**
-> DeleteUser(username)
+> void DeleteUser (string username)
 
 Delete user
 
@@ -186,24 +198,24 @@ using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
 using IO.Swagger.Client;
-using IO.Swagger.Module;
+using IO.Swagger.Model;
 
 namespace Example
 {
     public class DeleteUserExample
     {
-        public void main(){
+        public void main()
+        {
             
-            // Configure HTTP basic authorization: test_http_basic
-            Configuration.Default.Username = 'YOUR_USERNAME';
-            Configuration.Default.Password = 'YOUR_PASSWORD';
-
             var apiInstance = new UserApi();
             var username = username_example;  // string | The name that needs to be deleted
 
-            try {
+            try
+            {
                 apiInstance.DeleteUser(username);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Debug.Print("Exception when calling UserApi.DeleteUser: " + e.Message );
             }
         }
@@ -223,15 +235,15 @@ void (empty response body)
 
 ### Authorization
 
-[test_http_basic](../README.md#test_http_basic)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: application/xml, application/json
 
 # **GetUserByName**
-> User GetUserByName(username)
+> User GetUserByName (string username)
 
 Get user by user name
 
@@ -243,21 +255,25 @@ using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
 using IO.Swagger.Client;
-using IO.Swagger.Module;
+using IO.Swagger.Model;
 
 namespace Example
 {
     public class GetUserByNameExample
     {
-        public void main(){
+        public void main()
+        {
             
             var apiInstance = new UserApi();
             var username = username_example;  // string | The name that needs to be fetched. Use user1 for testing. 
 
-            try {
+            try
+            {
                 User result = apiInstance.GetUserByName(username);
                 Debug.WriteLine(result);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Debug.Print("Exception when calling UserApi.GetUserByName: " + e.Message );
             }
         }
@@ -282,10 +298,10 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: application/xml, application/json
 
 # **LoginUser**
-> string LoginUser(username, password)
+> string LoginUser (string username, string password)
 
 Logs user into the system
 
@@ -297,22 +313,26 @@ using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
 using IO.Swagger.Client;
-using IO.Swagger.Module;
+using IO.Swagger.Model;
 
 namespace Example
 {
     public class LoginUserExample
     {
-        public void main(){
+        public void main()
+        {
             
             var apiInstance = new UserApi();
             var username = username_example;  // string | The user name for login
             var password = password_example;  // string | The password for login in clear text
 
-            try {
+            try
+            {
                 string result = apiInstance.LoginUser(username, password);
                 Debug.WriteLine(result);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Debug.Print("Exception when calling UserApi.LoginUser: " + e.Message );
             }
         }
@@ -324,8 +344,8 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **string**| The user name for login | [optional] 
- **password** | **string**| The password for login in clear text | [optional] 
+ **username** | **string**| The user name for login | 
+ **password** | **string**| The password for login in clear text | 
 
 ### Return type
 
@@ -338,10 +358,10 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: application/xml, application/json
 
 # **LogoutUser**
-> LogoutUser()
+> void LogoutUser ()
 
 Logs out current logged in user session
 
@@ -353,19 +373,23 @@ using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
 using IO.Swagger.Client;
-using IO.Swagger.Module;
+using IO.Swagger.Model;
 
 namespace Example
 {
     public class LogoutUserExample
     {
-        public void main(){
+        public void main()
+        {
             
             var apiInstance = new UserApi();
 
-            try {
+            try
+            {
                 apiInstance.LogoutUser();
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Debug.Print("Exception when calling UserApi.LogoutUser: " + e.Message );
             }
         }
@@ -387,10 +411,10 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: application/xml, application/json
 
 # **UpdateUser**
-> UpdateUser(username, body)
+> void UpdateUser (string username, User body)
 
 Updated user
 
@@ -402,21 +426,25 @@ using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
 using IO.Swagger.Client;
-using IO.Swagger.Module;
+using IO.Swagger.Model;
 
 namespace Example
 {
     public class UpdateUserExample
     {
-        public void main(){
+        public void main()
+        {
             
             var apiInstance = new UserApi();
             var username = username_example;  // string | name that need to be deleted
             var body = new User(); // User | Updated user object
 
-            try {
+            try
+            {
                 apiInstance.UpdateUser(username, body);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Debug.Print("Exception when calling UserApi.UpdateUser: " + e.Message );
             }
         }
@@ -429,7 +457,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **string**| name that need to be deleted | 
- **body** | [**User**](User.md)| Updated user object | [optional] 
+ **body** | [**User**](User.md)| Updated user object | 
 
 ### Return type
 
@@ -442,5 +470,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml
+ - **Accept**: application/xml, application/json
 
