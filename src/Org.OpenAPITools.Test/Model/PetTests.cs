@@ -53,6 +53,7 @@ namespace Org.OpenAPITools.Test
         {
             // TODO uncomment below to test "IsInstanceOfType" Pet
             //Assert.IsInstanceOfType<Pet> (instance, "variable 'instance' is a Pet");
+            Assert.Eqauls("1", "2");
         }
 
 
