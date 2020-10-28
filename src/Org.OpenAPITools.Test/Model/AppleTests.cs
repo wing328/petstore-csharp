@@ -38,6 +38,8 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO uncomment below to create an instance of Apple
             //instance = new Apple();
+            Configuration c = new Configuration();
+            Console.WriteLine(Configuration.ToDebugReport());
         }
 
         public void Dispose()
