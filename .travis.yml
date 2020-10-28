@@ -6,4 +6,5 @@ before_install:
 script:
   - dotnet restore
   - msbuild
-  - dotnet test ../tests/bin/Debug/netcoreapp3.1/tests.dll
+  #- dotnet test ../tests/bin/Debug/netcoreapp3.1/tests.dll
+  - dotnet test ./Org.OpenAPITools.Test/bin/Debug/net47/Org.OpenAPITools.Test.dll
