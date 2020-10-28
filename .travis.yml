@@ -1,0 +1,9 @@
+language: csharp
+mono: latest
+dotnet: 3.1.200
+before_install:
+  - cd src
+script:
+  - dotnet restore
+  - msbuild
+  - dotnet test ../tests/bin/Debug/netcoreapp3.1/tests.dll
