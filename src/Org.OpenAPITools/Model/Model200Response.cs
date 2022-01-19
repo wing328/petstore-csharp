@@ -39,8 +39,8 @@ namespace Org.OpenAPITools.Model
         /// <param name="_class">_class.</param>
         public Model200Response(int name = default(int), string _class = default(string))
         {
-            this._Name = name;
-            this._Class = _class;
+            this.Name = name;
+            this.Class = _class;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -48,50 +48,14 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Name
         /// </summary>
         [DataMember(Name = "name", EmitDefaultValue = false)]
-        public int Name
-        {
-            get{ return _Name;}
-            set
-            {
-                _Name = value;
-                _flagName = true;
-            }
-        }
-        private int _Name;
-        private bool _flagName;
+        public int Name { get; set; }
 
-        /// <summary>
-        /// Returns false as Name should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeName()
-        {
-            return _flagName;
-        }
         /// <summary>
         /// Gets or Sets Class
         /// </summary>
         [DataMember(Name = "class", EmitDefaultValue = false)]
-        public string Class
-        {
-            get{ return _Class;}
-            set
-            {
-                _Class = value;
-                _flagClass = true;
-            }
-        }
-        private string _Class;
-        private bool _flagClass;
+        public string Class { get; set; }
 
-        /// <summary>
-        /// Returns false as Class should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeClass()
-        {
-            return _flagClass;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -104,7 +68,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class Model200Response {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Class: ").Append(Class).Append("\n");
@@ -151,11 +115,15 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = (hashCode * 59) + this.Name.GetHashCode();
                 if (this.Class != null)
-                    hashCode = hashCode * 59 + this.Class.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Class.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

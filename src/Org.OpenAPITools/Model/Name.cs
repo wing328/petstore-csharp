@@ -47,8 +47,8 @@ namespace Org.OpenAPITools.Model
         /// <param name="property">property.</param>
         public Name(int name = default(int), string property = default(string))
         {
-            this.__Name = name;
-            this._Property = property;
+            this._Name = name;
+            this.Property = property;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -56,26 +56,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets _Name
         /// </summary>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
-        public int _Name
-        {
-            get{ return __Name;}
-            set
-            {
-                __Name = value;
-                _flag_Name = true;
-            }
-        }
-        private int __Name;
-        private bool _flag_Name;
+        public int _Name { get; set; }
 
-        /// <summary>
-        /// Returns false as _Name should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerialize_Name()
-        {
-            return _flag_Name;
-        }
         /// <summary>
         /// Gets or Sets SnakeCase
         /// </summary>
@@ -94,26 +76,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Property
         /// </summary>
         [DataMember(Name = "property", EmitDefaultValue = false)]
-        public string Property
-        {
-            get{ return _Property;}
-            set
-            {
-                _Property = value;
-                _flagProperty = true;
-            }
-        }
-        private string _Property;
-        private bool _flagProperty;
+        public string Property { get; set; }
 
-        /// <summary>
-        /// Returns false as Property should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeProperty()
-        {
-            return _flagProperty;
-        }
         /// <summary>
         /// Gets or Sets _123Number
         /// </summary>
@@ -140,7 +104,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class Name {\n");
             sb.Append("  _Name: ").Append(_Name).Append("\n");
             sb.Append("  SnakeCase: ").Append(SnakeCase).Append("\n");
@@ -189,13 +153,17 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this._Name.GetHashCode();
-                hashCode = hashCode * 59 + this.SnakeCase.GetHashCode();
+                hashCode = (hashCode * 59) + this._Name.GetHashCode();
+                hashCode = (hashCode * 59) + this.SnakeCase.GetHashCode();
                 if (this.Property != null)
-                    hashCode = hashCode * 59 + this.Property.GetHashCode();
-                hashCode = hashCode * 59 + this._123Number.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Property.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this._123Number.GetHashCode();
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

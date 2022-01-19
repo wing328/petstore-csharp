@@ -50,7 +50,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="color">color (default to &quot;red&quot;).</param>
         public Dog(string breed = default(string), string className = "Dog", string color = "red") : base(className, color)
         {
-            this._Breed = breed;
+            this.Breed = breed;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -58,26 +58,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Breed
         /// </summary>
         [DataMember(Name = "breed", EmitDefaultValue = false)]
-        public string Breed
-        {
-            get{ return _Breed;}
-            set
-            {
-                _Breed = value;
-                _flagBreed = true;
-            }
-        }
-        private string _Breed;
-        private bool _flagBreed;
+        public string Breed { get; set; }
 
-        /// <summary>
-        /// Returns false as Breed should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeBreed()
-        {
-            return _flagBreed;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -90,7 +72,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class Dog {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  Breed: ").Append(Breed).Append("\n");
@@ -138,9 +120,13 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = base.GetHashCode();
                 if (this.Breed != null)
-                    hashCode = hashCode * 59 + this.Breed.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Breed.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }
@@ -162,7 +148,10 @@ namespace Org.OpenAPITools.Model
         /// <returns>Validation Result</returns>
         protected IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
         {
-            foreach(var x in BaseValidate(validationContext)) yield return x;
+            foreach (var x in BaseValidate(validationContext))
+            {
+                yield return x;
+            }
             yield break;
         }
     }

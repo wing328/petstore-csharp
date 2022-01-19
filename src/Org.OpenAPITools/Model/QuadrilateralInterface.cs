@@ -50,7 +50,7 @@ namespace Org.OpenAPITools.Model
             if (quadrilateralType == null) {
                 throw new ArgumentNullException("quadrilateralType is a required property for QuadrilateralInterface and cannot be null");
             }
-            this._QuadrilateralType = quadrilateralType;
+            this.QuadrilateralType = quadrilateralType;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -58,26 +58,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets QuadrilateralType
         /// </summary>
         [DataMember(Name = "quadrilateralType", IsRequired = true, EmitDefaultValue = false)]
-        public string QuadrilateralType
-        {
-            get{ return _QuadrilateralType;}
-            set
-            {
-                _QuadrilateralType = value;
-                _flagQuadrilateralType = true;
-            }
-        }
-        private string _QuadrilateralType;
-        private bool _flagQuadrilateralType;
+        public string QuadrilateralType { get; set; }
 
-        /// <summary>
-        /// Returns false as QuadrilateralType should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeQuadrilateralType()
-        {
-            return _flagQuadrilateralType;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -90,7 +72,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class QuadrilateralInterface {\n");
             sb.Append("  QuadrilateralType: ").Append(QuadrilateralType).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -137,9 +119,13 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.QuadrilateralType != null)
-                    hashCode = hashCode * 59 + this.QuadrilateralType.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.QuadrilateralType.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

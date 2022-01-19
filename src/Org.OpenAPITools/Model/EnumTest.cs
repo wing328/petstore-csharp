@@ -62,28 +62,8 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets EnumString
         /// </summary>
-
         [DataMember(Name = "enum_string", EmitDefaultValue = false)]
-        public EnumStringEnum? EnumString
-        {
-            get{ return _EnumString;}
-            set
-            {
-                _EnumString = value;
-                _flagEnumString = true;
-            }
-        }
-        private EnumStringEnum? _EnumString;
-        private bool _flagEnumString;
-
-        /// <summary>
-        /// Returns false as EnumString should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeEnumString()
-        {
-            return _flagEnumString;
-        }
+        public EnumStringEnum? EnumString { get; set; }
         /// <summary>
         /// Defines EnumStringRequired
         /// </summary>
@@ -114,28 +94,8 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets EnumStringRequired
         /// </summary>
-
         [DataMember(Name = "enum_string_required", IsRequired = true, EmitDefaultValue = false)]
-        public EnumStringRequiredEnum EnumStringRequired
-        {
-            get{ return _EnumStringRequired;}
-            set
-            {
-                _EnumStringRequired = value;
-                _flagEnumStringRequired = true;
-            }
-        }
-        private EnumStringRequiredEnum _EnumStringRequired;
-        private bool _flagEnumStringRequired;
-
-        /// <summary>
-        /// Returns false as EnumStringRequired should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeEnumStringRequired()
-        {
-            return _flagEnumStringRequired;
-        }
+        public EnumStringRequiredEnum EnumStringRequired { get; set; }
         /// <summary>
         /// Defines EnumInteger
         /// </summary>
@@ -157,28 +117,8 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets EnumInteger
         /// </summary>
-
         [DataMember(Name = "enum_integer", EmitDefaultValue = false)]
-        public EnumIntegerEnum? EnumInteger
-        {
-            get{ return _EnumInteger;}
-            set
-            {
-                _EnumInteger = value;
-                _flagEnumInteger = true;
-            }
-        }
-        private EnumIntegerEnum? _EnumInteger;
-        private bool _flagEnumInteger;
-
-        /// <summary>
-        /// Returns false as EnumInteger should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeEnumInteger()
-        {
-            return _flagEnumInteger;
-        }
+        public EnumIntegerEnum? EnumInteger { get; set; }
         /// <summary>
         /// Defines EnumIntegerOnly
         /// </summary>
@@ -200,28 +140,8 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets EnumIntegerOnly
         /// </summary>
-
         [DataMember(Name = "enum_integer_only", EmitDefaultValue = false)]
-        public EnumIntegerOnlyEnum? EnumIntegerOnly
-        {
-            get{ return _EnumIntegerOnly;}
-            set
-            {
-                _EnumIntegerOnly = value;
-                _flagEnumIntegerOnly = true;
-            }
-        }
-        private EnumIntegerOnlyEnum? _EnumIntegerOnly;
-        private bool _flagEnumIntegerOnly;
-
-        /// <summary>
-        /// Returns false as EnumIntegerOnly should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeEnumIntegerOnly()
-        {
-            return _flagEnumIntegerOnly;
-        }
+        public EnumIntegerOnlyEnum? EnumIntegerOnly { get; set; }
         /// <summary>
         /// Defines EnumNumber
         /// </summary>
@@ -246,132 +166,32 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets EnumNumber
         /// </summary>
-
         [DataMember(Name = "enum_number", EmitDefaultValue = false)]
-        public EnumNumberEnum? EnumNumber
-        {
-            get{ return _EnumNumber;}
-            set
-            {
-                _EnumNumber = value;
-                _flagEnumNumber = true;
-            }
-        }
-        private EnumNumberEnum? _EnumNumber;
-        private bool _flagEnumNumber;
-
-        /// <summary>
-        /// Returns false as EnumNumber should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeEnumNumber()
-        {
-            return _flagEnumNumber;
-        }
+        public EnumNumberEnum? EnumNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets OuterEnum
         /// </summary>
-
         [DataMember(Name = "outerEnum", EmitDefaultValue = true)]
-        public OuterEnum? OuterEnum
-        {
-            get{ return _OuterEnum;}
-            set
-            {
-                _OuterEnum = value;
-                _flagOuterEnum = true;
-            }
-        }
-        private OuterEnum? _OuterEnum;
-        private bool _flagOuterEnum;
-
-        /// <summary>
-        /// Returns false as OuterEnum should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeOuterEnum()
-        {
-            return _flagOuterEnum;
-        }
+        public OuterEnum? OuterEnum { get; set; }
 
         /// <summary>
         /// Gets or Sets OuterEnumInteger
         /// </summary>
-
         [DataMember(Name = "outerEnumInteger", EmitDefaultValue = false)]
-        public OuterEnumInteger? OuterEnumInteger
-        {
-            get{ return _OuterEnumInteger;}
-            set
-            {
-                _OuterEnumInteger = value;
-                _flagOuterEnumInteger = true;
-            }
-        }
-        private OuterEnumInteger? _OuterEnumInteger;
-        private bool _flagOuterEnumInteger;
-
-        /// <summary>
-        /// Returns false as OuterEnumInteger should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeOuterEnumInteger()
-        {
-            return _flagOuterEnumInteger;
-        }
+        public OuterEnumInteger? OuterEnumInteger { get; set; }
 
         /// <summary>
         /// Gets or Sets OuterEnumDefaultValue
         /// </summary>
-
         [DataMember(Name = "outerEnumDefaultValue", EmitDefaultValue = false)]
-        public OuterEnumDefaultValue? OuterEnumDefaultValue
-        {
-            get{ return _OuterEnumDefaultValue;}
-            set
-            {
-                _OuterEnumDefaultValue = value;
-                _flagOuterEnumDefaultValue = true;
-            }
-        }
-        private OuterEnumDefaultValue? _OuterEnumDefaultValue;
-        private bool _flagOuterEnumDefaultValue;
-
-        /// <summary>
-        /// Returns false as OuterEnumDefaultValue should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeOuterEnumDefaultValue()
-        {
-            return _flagOuterEnumDefaultValue;
-        }
+        public OuterEnumDefaultValue? OuterEnumDefaultValue { get; set; }
 
         /// <summary>
         /// Gets or Sets OuterEnumIntegerDefaultValue
         /// </summary>
-
         [DataMember(Name = "outerEnumIntegerDefaultValue", EmitDefaultValue = false)]
-        public OuterEnumIntegerDefaultValue? OuterEnumIntegerDefaultValue
-        {
-            get{ return _OuterEnumIntegerDefaultValue;}
-            set
-            {
-                _OuterEnumIntegerDefaultValue = value;
-                _flagOuterEnumIntegerDefaultValue = true;
-            }
-        }
-        private OuterEnumIntegerDefaultValue? _OuterEnumIntegerDefaultValue;
-        private bool _flagOuterEnumIntegerDefaultValue;
-
-        /// <summary>
-        /// Returns false as OuterEnumIntegerDefaultValue should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeOuterEnumIntegerDefaultValue()
-        {
-            return _flagOuterEnumIntegerDefaultValue;
-        }
+        public OuterEnumIntegerDefaultValue? OuterEnumIntegerDefaultValue { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="EnumTest" /> class.
         /// </summary>
@@ -394,15 +214,15 @@ namespace Org.OpenAPITools.Model
         /// <param name="outerEnumIntegerDefaultValue">outerEnumIntegerDefaultValue.</param>
         public EnumTest(EnumStringEnum? enumString = default(EnumStringEnum?), EnumStringRequiredEnum enumStringRequired = default(EnumStringRequiredEnum), EnumIntegerEnum? enumInteger = default(EnumIntegerEnum?), EnumIntegerOnlyEnum? enumIntegerOnly = default(EnumIntegerOnlyEnum?), EnumNumberEnum? enumNumber = default(EnumNumberEnum?), OuterEnum? outerEnum = default(OuterEnum?), OuterEnumInteger? outerEnumInteger = default(OuterEnumInteger?), OuterEnumDefaultValue? outerEnumDefaultValue = default(OuterEnumDefaultValue?), OuterEnumIntegerDefaultValue? outerEnumIntegerDefaultValue = default(OuterEnumIntegerDefaultValue?))
         {
-            this._EnumStringRequired = enumStringRequired;
-            this._EnumString = enumString;
-            this._EnumInteger = enumInteger;
-            this._EnumIntegerOnly = enumIntegerOnly;
-            this._EnumNumber = enumNumber;
-            this._OuterEnum = outerEnum;
-            this._OuterEnumInteger = outerEnumInteger;
-            this._OuterEnumDefaultValue = outerEnumDefaultValue;
-            this._OuterEnumIntegerDefaultValue = outerEnumIntegerDefaultValue;
+            this.EnumStringRequired = enumStringRequired;
+            this.EnumString = enumString;
+            this.EnumInteger = enumInteger;
+            this.EnumIntegerOnly = enumIntegerOnly;
+            this.EnumNumber = enumNumber;
+            this.OuterEnum = outerEnum;
+            this.OuterEnumInteger = outerEnumInteger;
+            this.OuterEnumDefaultValue = outerEnumDefaultValue;
+            this.OuterEnumIntegerDefaultValue = outerEnumIntegerDefaultValue;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -418,7 +238,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class EnumTest {\n");
             sb.Append("  EnumString: ").Append(EnumString).Append("\n");
             sb.Append("  EnumStringRequired: ").Append(EnumStringRequired).Append("\n");
@@ -472,17 +292,19 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.EnumString.GetHashCode();
-                hashCode = hashCode * 59 + this.EnumStringRequired.GetHashCode();
-                hashCode = hashCode * 59 + this.EnumInteger.GetHashCode();
-                hashCode = hashCode * 59 + this.EnumIntegerOnly.GetHashCode();
-                hashCode = hashCode * 59 + this.EnumNumber.GetHashCode();
-                hashCode = hashCode * 59 + this.OuterEnum.GetHashCode();
-                hashCode = hashCode * 59 + this.OuterEnumInteger.GetHashCode();
-                hashCode = hashCode * 59 + this.OuterEnumDefaultValue.GetHashCode();
-                hashCode = hashCode * 59 + this.OuterEnumIntegerDefaultValue.GetHashCode();
+                hashCode = (hashCode * 59) + this.EnumString.GetHashCode();
+                hashCode = (hashCode * 59) + this.EnumStringRequired.GetHashCode();
+                hashCode = (hashCode * 59) + this.EnumInteger.GetHashCode();
+                hashCode = (hashCode * 59) + this.EnumIntegerOnly.GetHashCode();
+                hashCode = (hashCode * 59) + this.EnumNumber.GetHashCode();
+                hashCode = (hashCode * 59) + this.OuterEnum.GetHashCode();
+                hashCode = (hashCode * 59) + this.OuterEnumInteger.GetHashCode();
+                hashCode = (hashCode * 59) + this.OuterEnumDefaultValue.GetHashCode();
+                hashCode = (hashCode * 59) + this.OuterEnumIntegerDefaultValue.GetHashCode();
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

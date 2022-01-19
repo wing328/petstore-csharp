@@ -44,65 +44,29 @@ namespace Org.OpenAPITools.Model
         /// <param name="sweet">sweet.</param>
         public BananaReq(decimal lengthCm = default(decimal), bool sweet = default(bool))
         {
-            this._LengthCm = lengthCm;
-            this._Sweet = sweet;
+            this.LengthCm = lengthCm;
+            this.Sweet = sweet;
         }
 
         /// <summary>
         /// Gets or Sets LengthCm
         /// </summary>
         [DataMember(Name = "lengthCm", IsRequired = true, EmitDefaultValue = false)]
-        public decimal LengthCm
-        {
-            get{ return _LengthCm;}
-            set
-            {
-                _LengthCm = value;
-                _flagLengthCm = true;
-            }
-        }
-        private decimal _LengthCm;
-        private bool _flagLengthCm;
+        public decimal LengthCm { get; set; }
 
-        /// <summary>
-        /// Returns false as LengthCm should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeLengthCm()
-        {
-            return _flagLengthCm;
-        }
         /// <summary>
         /// Gets or Sets Sweet
         /// </summary>
         [DataMember(Name = "sweet", EmitDefaultValue = true)]
-        public bool Sweet
-        {
-            get{ return _Sweet;}
-            set
-            {
-                _Sweet = value;
-                _flagSweet = true;
-            }
-        }
-        private bool _Sweet;
-        private bool _flagSweet;
+        public bool Sweet { get; set; }
 
-        /// <summary>
-        /// Returns false as Sweet should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSweet()
-        {
-            return _flagSweet;
-        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class BananaReq {\n");
             sb.Append("  LengthCm: ").Append(LengthCm).Append("\n");
             sb.Append("  Sweet: ").Append(Sweet).Append("\n");
@@ -148,8 +112,8 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.LengthCm.GetHashCode();
-                hashCode = hashCode * 59 + this.Sweet.GetHashCode();
+                hashCode = (hashCode * 59) + this.LengthCm.GetHashCode();
+                hashCode = (hashCode * 59) + this.Sweet.GetHashCode();
                 return hashCode;
             }
         }

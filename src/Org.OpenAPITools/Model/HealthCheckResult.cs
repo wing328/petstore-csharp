@@ -38,7 +38,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="nullableMessage">nullableMessage.</param>
         public HealthCheckResult(string nullableMessage = default(string))
         {
-            this._NullableMessage = nullableMessage;
+            this.NullableMessage = nullableMessage;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -46,26 +46,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets NullableMessage
         /// </summary>
         [DataMember(Name = "NullableMessage", EmitDefaultValue = true)]
-        public string NullableMessage
-        {
-            get{ return _NullableMessage;}
-            set
-            {
-                _NullableMessage = value;
-                _flagNullableMessage = true;
-            }
-        }
-        private string _NullableMessage;
-        private bool _flagNullableMessage;
+        public string NullableMessage { get; set; }
 
-        /// <summary>
-        /// Returns false as NullableMessage should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeNullableMessage()
-        {
-            return _flagNullableMessage;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -78,7 +60,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class HealthCheckResult {\n");
             sb.Append("  NullableMessage: ").Append(NullableMessage).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -125,9 +107,13 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.NullableMessage != null)
-                    hashCode = hashCode * 59 + this.NullableMessage.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.NullableMessage.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

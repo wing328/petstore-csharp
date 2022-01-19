@@ -64,28 +64,8 @@ namespace Org.OpenAPITools.Model
         /// Order Status
         /// </summary>
         /// <value>Order Status</value>
-
         [DataMember(Name = "status", EmitDefaultValue = false)]
-        public StatusEnum? Status
-        {
-            get{ return _Status;}
-            set
-            {
-                _Status = value;
-                _flagStatus = true;
-            }
-        }
-        private StatusEnum? _Status;
-        private bool _flagStatus;
-
-        /// <summary>
-        /// Returns false as Status should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeStatus()
-        {
-            return _flagStatus;
-        }
+        public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Order" /> class.
         /// </summary>
@@ -97,11 +77,12 @@ namespace Org.OpenAPITools.Model
         /// <param name="complete">complete (default to false).</param>
         public Order(long id = default(long), long petId = default(long), int quantity = default(int), DateTime shipDate = default(DateTime), StatusEnum? status = default(StatusEnum?), bool complete = false)
         {
-            this._Id = id;
-            this._PetId = petId;
-            this._Quantity = quantity;
-            this._ShipDate = shipDate;
-            this._Status = status;
+            this.Id = id;
+            this.PetId = petId;
+            this.Quantity = quantity;
+            this.ShipDate = shipDate;
+            this.Status = status;
+            this.Complete = complete;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -109,122 +90,32 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public long Id
-        {
-            get{ return _Id;}
-            set
-            {
-                _Id = value;
-                _flagId = true;
-            }
-        }
-        private long _Id;
-        private bool _flagId;
+        public long Id { get; set; }
 
-        /// <summary>
-        /// Returns false as Id should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeId()
-        {
-            return _flagId;
-        }
         /// <summary>
         /// Gets or Sets PetId
         /// </summary>
         [DataMember(Name = "petId", EmitDefaultValue = false)]
-        public long PetId
-        {
-            get{ return _PetId;}
-            set
-            {
-                _PetId = value;
-                _flagPetId = true;
-            }
-        }
-        private long _PetId;
-        private bool _flagPetId;
+        public long PetId { get; set; }
 
-        /// <summary>
-        /// Returns false as PetId should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializePetId()
-        {
-            return _flagPetId;
-        }
         /// <summary>
         /// Gets or Sets Quantity
         /// </summary>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public int Quantity
-        {
-            get{ return _Quantity;}
-            set
-            {
-                _Quantity = value;
-                _flagQuantity = true;
-            }
-        }
-        private int _Quantity;
-        private bool _flagQuantity;
+        public int Quantity { get; set; }
 
-        /// <summary>
-        /// Returns false as Quantity should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeQuantity()
-        {
-            return _flagQuantity;
-        }
         /// <summary>
         /// Gets or Sets ShipDate
         /// </summary>
         [DataMember(Name = "shipDate", EmitDefaultValue = false)]
-        public DateTime ShipDate
-        {
-            get{ return _ShipDate;}
-            set
-            {
-                _ShipDate = value;
-                _flagShipDate = true;
-            }
-        }
-        private DateTime _ShipDate;
-        private bool _flagShipDate;
+        public DateTime ShipDate { get; set; }
 
-        /// <summary>
-        /// Returns false as ShipDate should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeShipDate()
-        {
-            return _flagShipDate;
-        }
         /// <summary>
         /// Gets or Sets Complete
         /// </summary>
         [DataMember(Name = "complete", EmitDefaultValue = true)]
-        public bool Complete
-        {
-            get{ return _Complete;}
-            set
-            {
-                _Complete = value;
-                _flagComplete = true;
-            }
-        }
-        private bool _Complete;
-        private bool _flagComplete;
+        public bool Complete { get; set; }
 
-        /// <summary>
-        /// Returns false as Complete should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeComplete()
-        {
-            return _flagComplete;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -237,7 +128,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class Order {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  PetId: ").Append(PetId).Append("\n");
@@ -288,15 +179,19 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Id.GetHashCode();
-                hashCode = hashCode * 59 + this.PetId.GetHashCode();
-                hashCode = hashCode * 59 + this.Quantity.GetHashCode();
+                hashCode = (hashCode * 59) + this.Id.GetHashCode();
+                hashCode = (hashCode * 59) + this.PetId.GetHashCode();
+                hashCode = (hashCode * 59) + this.Quantity.GetHashCode();
                 if (this.ShipDate != null)
-                    hashCode = hashCode * 59 + this.ShipDate.GetHashCode();
-                hashCode = hashCode * 59 + this.Status.GetHashCode();
-                hashCode = hashCode * 59 + this.Complete.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ShipDate.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Status.GetHashCode();
+                hashCode = (hashCode * 59) + this.Complete.GetHashCode();
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

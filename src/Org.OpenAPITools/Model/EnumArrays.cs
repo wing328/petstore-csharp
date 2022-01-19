@@ -56,28 +56,8 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets JustSymbol
         /// </summary>
-
         [DataMember(Name = "just_symbol", EmitDefaultValue = false)]
-        public JustSymbolEnum? JustSymbol
-        {
-            get{ return _JustSymbol;}
-            set
-            {
-                _JustSymbol = value;
-                _flagJustSymbol = true;
-            }
-        }
-        private JustSymbolEnum? _JustSymbol;
-        private bool _flagJustSymbol;
-
-        /// <summary>
-        /// Returns false as JustSymbol should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeJustSymbol()
-        {
-            return _flagJustSymbol;
-        }
+        public JustSymbolEnum? JustSymbol { get; set; }
         /// <summary>
         /// Defines ArrayEnum
         /// </summary>
@@ -103,28 +83,8 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets ArrayEnum
         /// </summary>
-
         [DataMember(Name = "array_enum", EmitDefaultValue = false)]
-        public List<ArrayEnumEnum> ArrayEnum
-        {
-            get{ return _ArrayEnum;}
-            set
-            {
-                _ArrayEnum = value;
-                _flagArrayEnum = true;
-            }
-        }
-        private List<ArrayEnumEnum> _ArrayEnum;
-        private bool _flagArrayEnum;
-
-        /// <summary>
-        /// Returns false as ArrayEnum should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeArrayEnum()
-        {
-            return _flagArrayEnum;
-        }
+        public List<ArrayEnumEnum> ArrayEnum { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="EnumArrays" /> class.
         /// </summary>
@@ -132,8 +92,8 @@ namespace Org.OpenAPITools.Model
         /// <param name="arrayEnum">arrayEnum.</param>
         public EnumArrays(JustSymbolEnum? justSymbol = default(JustSymbolEnum?), List<ArrayEnumEnum> arrayEnum = default(List<ArrayEnumEnum>))
         {
-            this._JustSymbol = justSymbol;
-            this._ArrayEnum = arrayEnum;
+            this.JustSymbol = justSymbol;
+            this.ArrayEnum = arrayEnum;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -149,7 +109,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class EnumArrays {\n");
             sb.Append("  JustSymbol: ").Append(JustSymbol).Append("\n");
             sb.Append("  ArrayEnum: ").Append(ArrayEnum).Append("\n");
@@ -196,10 +156,12 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.JustSymbol.GetHashCode();
-                hashCode = hashCode * 59 + this.ArrayEnum.GetHashCode();
+                hashCode = (hashCode * 59) + this.JustSymbol.GetHashCode();
+                hashCode = (hashCode * 59) + this.ArrayEnum.GetHashCode();
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

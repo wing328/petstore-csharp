@@ -38,7 +38,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="sourceURI">Test capitalization.</param>
         public File(string sourceURI = default(string))
         {
-            this._SourceURI = sourceURI;
+            this.SourceURI = sourceURI;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -47,26 +47,8 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>Test capitalization</value>
         [DataMember(Name = "sourceURI", EmitDefaultValue = false)]
-        public string SourceURI
-        {
-            get{ return _SourceURI;}
-            set
-            {
-                _SourceURI = value;
-                _flagSourceURI = true;
-            }
-        }
-        private string _SourceURI;
-        private bool _flagSourceURI;
+        public string SourceURI { get; set; }
 
-        /// <summary>
-        /// Returns false as SourceURI should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSourceURI()
-        {
-            return _flagSourceURI;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -79,7 +61,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class File {\n");
             sb.Append("  SourceURI: ").Append(SourceURI).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -126,9 +108,13 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.SourceURI != null)
-                    hashCode = hashCode * 59 + this.SourceURI.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.SourceURI.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

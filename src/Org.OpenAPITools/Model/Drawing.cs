@@ -41,115 +41,43 @@ namespace Org.OpenAPITools.Model
         /// <param name="shapes">shapes.</param>
         public Drawing(Shape mainShape = default(Shape), ShapeOrNull shapeOrNull = default(ShapeOrNull), NullableShape nullableShape = default(NullableShape), List<Shape> shapes = default(List<Shape>)) : base()
         {
-            this._MainShape = mainShape;
-            this._ShapeOrNull = shapeOrNull;
-            this._NullableShape = nullableShape;
-            this._Shapes = shapes;
+            this.MainShape = mainShape;
+            this.ShapeOrNull = shapeOrNull;
+            this.NullableShape = nullableShape;
+            this.Shapes = shapes;
         }
 
         /// <summary>
         /// Gets or Sets MainShape
         /// </summary>
         [DataMember(Name = "mainShape", EmitDefaultValue = false)]
-        public Shape MainShape
-        {
-            get{ return _MainShape;}
-            set
-            {
-                _MainShape = value;
-                _flagMainShape = true;
-            }
-        }
-        private Shape _MainShape;
-        private bool _flagMainShape;
+        public Shape MainShape { get; set; }
 
-        /// <summary>
-        /// Returns false as MainShape should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeMainShape()
-        {
-            return _flagMainShape;
-        }
         /// <summary>
         /// Gets or Sets ShapeOrNull
         /// </summary>
         [DataMember(Name = "shapeOrNull", EmitDefaultValue = false)]
-        public ShapeOrNull ShapeOrNull
-        {
-            get{ return _ShapeOrNull;}
-            set
-            {
-                _ShapeOrNull = value;
-                _flagShapeOrNull = true;
-            }
-        }
-        private ShapeOrNull _ShapeOrNull;
-        private bool _flagShapeOrNull;
+        public ShapeOrNull ShapeOrNull { get; set; }
 
-        /// <summary>
-        /// Returns false as ShapeOrNull should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeShapeOrNull()
-        {
-            return _flagShapeOrNull;
-        }
         /// <summary>
         /// Gets or Sets NullableShape
         /// </summary>
         [DataMember(Name = "nullableShape", EmitDefaultValue = true)]
-        public NullableShape NullableShape
-        {
-            get{ return _NullableShape;}
-            set
-            {
-                _NullableShape = value;
-                _flagNullableShape = true;
-            }
-        }
-        private NullableShape _NullableShape;
-        private bool _flagNullableShape;
+        public NullableShape NullableShape { get; set; }
 
-        /// <summary>
-        /// Returns false as NullableShape should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeNullableShape()
-        {
-            return _flagNullableShape;
-        }
         /// <summary>
         /// Gets or Sets Shapes
         /// </summary>
         [DataMember(Name = "shapes", EmitDefaultValue = false)]
-        public List<Shape> Shapes
-        {
-            get{ return _Shapes;}
-            set
-            {
-                _Shapes = value;
-                _flagShapes = true;
-            }
-        }
-        private List<Shape> _Shapes;
-        private bool _flagShapes;
+        public List<Shape> Shapes { get; set; }
 
-        /// <summary>
-        /// Returns false as Shapes should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeShapes()
-        {
-            return _flagShapes;
-        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class Drawing {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  MainShape: ").Append(MainShape).Append("\n");
@@ -199,13 +127,21 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = base.GetHashCode();
                 if (this.MainShape != null)
-                    hashCode = hashCode * 59 + this.MainShape.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.MainShape.GetHashCode();
+                }
                 if (this.ShapeOrNull != null)
-                    hashCode = hashCode * 59 + this.ShapeOrNull.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ShapeOrNull.GetHashCode();
+                }
                 if (this.NullableShape != null)
-                    hashCode = hashCode * 59 + this.NullableShape.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.NullableShape.GetHashCode();
+                }
                 if (this.Shapes != null)
-                    hashCode = hashCode * 59 + this.Shapes.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Shapes.GetHashCode();
+                }
                 return hashCode;
             }
         }

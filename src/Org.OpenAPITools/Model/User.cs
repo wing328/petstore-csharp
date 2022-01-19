@@ -49,18 +49,18 @@ namespace Org.OpenAPITools.Model
         /// <param name="anyTypePropNullable">test code generation for any type Here the &#39;type&#39; attribute is not specified, which means the value can be anything, including the null value, string, number, boolean, array or object. The &#39;nullable&#39; attribute does not change the allowed values..</param>
         public User(long id = default(long), string username = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), string password = default(string), string phone = default(string), int userStatus = default(int), Object objectWithNoDeclaredProps = default(Object), Object objectWithNoDeclaredPropsNullable = default(Object), Object anyTypeProp = default(Object), Object anyTypePropNullable = default(Object))
         {
-            this._Id = id;
-            this._Username = username;
-            this._FirstName = firstName;
-            this._LastName = lastName;
-            this._Email = email;
-            this._Password = password;
-            this._Phone = phone;
-            this._UserStatus = userStatus;
-            this._ObjectWithNoDeclaredProps = objectWithNoDeclaredProps;
-            this._ObjectWithNoDeclaredPropsNullable = objectWithNoDeclaredPropsNullable;
-            this._AnyTypeProp = anyTypeProp;
-            this._AnyTypePropNullable = anyTypePropNullable;
+            this.Id = id;
+            this.Username = username;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
+            this.Password = password;
+            this.Phone = phone;
+            this.UserStatus = userStatus;
+            this.ObjectWithNoDeclaredProps = objectWithNoDeclaredProps;
+            this.ObjectWithNoDeclaredPropsNullable = objectWithNoDeclaredPropsNullable;
+            this.AnyTypeProp = anyTypeProp;
+            this.AnyTypePropNullable = anyTypePropNullable;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -68,295 +68,79 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public long Id
-        {
-            get{ return _Id;}
-            set
-            {
-                _Id = value;
-                _flagId = true;
-            }
-        }
-        private long _Id;
-        private bool _flagId;
+        public long Id { get; set; }
 
-        /// <summary>
-        /// Returns false as Id should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeId()
-        {
-            return _flagId;
-        }
         /// <summary>
         /// Gets or Sets Username
         /// </summary>
         [DataMember(Name = "username", EmitDefaultValue = false)]
-        public string Username
-        {
-            get{ return _Username;}
-            set
-            {
-                _Username = value;
-                _flagUsername = true;
-            }
-        }
-        private string _Username;
-        private bool _flagUsername;
+        public string Username { get; set; }
 
-        /// <summary>
-        /// Returns false as Username should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeUsername()
-        {
-            return _flagUsername;
-        }
         /// <summary>
         /// Gets or Sets FirstName
         /// </summary>
         [DataMember(Name = "firstName", EmitDefaultValue = false)]
-        public string FirstName
-        {
-            get{ return _FirstName;}
-            set
-            {
-                _FirstName = value;
-                _flagFirstName = true;
-            }
-        }
-        private string _FirstName;
-        private bool _flagFirstName;
+        public string FirstName { get; set; }
 
-        /// <summary>
-        /// Returns false as FirstName should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeFirstName()
-        {
-            return _flagFirstName;
-        }
         /// <summary>
         /// Gets or Sets LastName
         /// </summary>
         [DataMember(Name = "lastName", EmitDefaultValue = false)]
-        public string LastName
-        {
-            get{ return _LastName;}
-            set
-            {
-                _LastName = value;
-                _flagLastName = true;
-            }
-        }
-        private string _LastName;
-        private bool _flagLastName;
+        public string LastName { get; set; }
 
-        /// <summary>
-        /// Returns false as LastName should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeLastName()
-        {
-            return _flagLastName;
-        }
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
         [DataMember(Name = "email", EmitDefaultValue = false)]
-        public string Email
-        {
-            get{ return _Email;}
-            set
-            {
-                _Email = value;
-                _flagEmail = true;
-            }
-        }
-        private string _Email;
-        private bool _flagEmail;
+        public string Email { get; set; }
 
-        /// <summary>
-        /// Returns false as Email should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeEmail()
-        {
-            return _flagEmail;
-        }
         /// <summary>
         /// Gets or Sets Password
         /// </summary>
         [DataMember(Name = "password", EmitDefaultValue = false)]
-        public string Password
-        {
-            get{ return _Password;}
-            set
-            {
-                _Password = value;
-                _flagPassword = true;
-            }
-        }
-        private string _Password;
-        private bool _flagPassword;
+        public string Password { get; set; }
 
-        /// <summary>
-        /// Returns false as Password should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializePassword()
-        {
-            return _flagPassword;
-        }
         /// <summary>
         /// Gets or Sets Phone
         /// </summary>
         [DataMember(Name = "phone", EmitDefaultValue = false)]
-        public string Phone
-        {
-            get{ return _Phone;}
-            set
-            {
-                _Phone = value;
-                _flagPhone = true;
-            }
-        }
-        private string _Phone;
-        private bool _flagPhone;
+        public string Phone { get; set; }
 
-        /// <summary>
-        /// Returns false as Phone should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializePhone()
-        {
-            return _flagPhone;
-        }
         /// <summary>
         /// User Status
         /// </summary>
         /// <value>User Status</value>
         [DataMember(Name = "userStatus", EmitDefaultValue = false)]
-        public int UserStatus
-        {
-            get{ return _UserStatus;}
-            set
-            {
-                _UserStatus = value;
-                _flagUserStatus = true;
-            }
-        }
-        private int _UserStatus;
-        private bool _flagUserStatus;
+        public int UserStatus { get; set; }
 
-        /// <summary>
-        /// Returns false as UserStatus should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeUserStatus()
-        {
-            return _flagUserStatus;
-        }
         /// <summary>
         /// test code generation for objects Value must be a map of strings to values. It cannot be the &#39;null&#39; value.
         /// </summary>
         /// <value>test code generation for objects Value must be a map of strings to values. It cannot be the &#39;null&#39; value.</value>
         [DataMember(Name = "objectWithNoDeclaredProps", EmitDefaultValue = false)]
-        public Object ObjectWithNoDeclaredProps
-        {
-            get{ return _ObjectWithNoDeclaredProps;}
-            set
-            {
-                _ObjectWithNoDeclaredProps = value;
-                _flagObjectWithNoDeclaredProps = true;
-            }
-        }
-        private Object _ObjectWithNoDeclaredProps;
-        private bool _flagObjectWithNoDeclaredProps;
+        public Object ObjectWithNoDeclaredProps { get; set; }
 
-        /// <summary>
-        /// Returns false as ObjectWithNoDeclaredProps should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeObjectWithNoDeclaredProps()
-        {
-            return _flagObjectWithNoDeclaredProps;
-        }
         /// <summary>
         /// test code generation for nullable objects. Value must be a map of strings to values or the &#39;null&#39; value.
         /// </summary>
         /// <value>test code generation for nullable objects. Value must be a map of strings to values or the &#39;null&#39; value.</value>
         [DataMember(Name = "objectWithNoDeclaredPropsNullable", EmitDefaultValue = true)]
-        public Object ObjectWithNoDeclaredPropsNullable
-        {
-            get{ return _ObjectWithNoDeclaredPropsNullable;}
-            set
-            {
-                _ObjectWithNoDeclaredPropsNullable = value;
-                _flagObjectWithNoDeclaredPropsNullable = true;
-            }
-        }
-        private Object _ObjectWithNoDeclaredPropsNullable;
-        private bool _flagObjectWithNoDeclaredPropsNullable;
+        public Object ObjectWithNoDeclaredPropsNullable { get; set; }
 
-        /// <summary>
-        /// Returns false as ObjectWithNoDeclaredPropsNullable should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeObjectWithNoDeclaredPropsNullable()
-        {
-            return _flagObjectWithNoDeclaredPropsNullable;
-        }
         /// <summary>
         /// test code generation for any type Here the &#39;type&#39; attribute is not specified, which means the value can be anything, including the null value, string, number, boolean, array or object. See https://github.com/OAI/OpenAPI-Specification/issues/1389
         /// </summary>
         /// <value>test code generation for any type Here the &#39;type&#39; attribute is not specified, which means the value can be anything, including the null value, string, number, boolean, array or object. See https://github.com/OAI/OpenAPI-Specification/issues/1389</value>
         [DataMember(Name = "anyTypeProp", EmitDefaultValue = true)]
-        public Object AnyTypeProp
-        {
-            get{ return _AnyTypeProp;}
-            set
-            {
-                _AnyTypeProp = value;
-                _flagAnyTypeProp = true;
-            }
-        }
-        private Object _AnyTypeProp;
-        private bool _flagAnyTypeProp;
+        public Object AnyTypeProp { get; set; }
 
-        /// <summary>
-        /// Returns false as AnyTypeProp should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeAnyTypeProp()
-        {
-            return _flagAnyTypeProp;
-        }
         /// <summary>
         /// test code generation for any type Here the &#39;type&#39; attribute is not specified, which means the value can be anything, including the null value, string, number, boolean, array or object. The &#39;nullable&#39; attribute does not change the allowed values.
         /// </summary>
         /// <value>test code generation for any type Here the &#39;type&#39; attribute is not specified, which means the value can be anything, including the null value, string, number, boolean, array or object. The &#39;nullable&#39; attribute does not change the allowed values.</value>
         [DataMember(Name = "anyTypePropNullable", EmitDefaultValue = true)]
-        public Object AnyTypePropNullable
-        {
-            get{ return _AnyTypePropNullable;}
-            set
-            {
-                _AnyTypePropNullable = value;
-                _flagAnyTypePropNullable = true;
-            }
-        }
-        private Object _AnyTypePropNullable;
-        private bool _flagAnyTypePropNullable;
+        public Object AnyTypePropNullable { get; set; }
 
-        /// <summary>
-        /// Returns false as AnyTypePropNullable should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeAnyTypePropNullable()
-        {
-            return _flagAnyTypePropNullable;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -369,7 +153,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class User {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Username: ").Append(Username).Append("\n");
@@ -426,30 +210,52 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Id.GetHashCode();
+                hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 if (this.Username != null)
-                    hashCode = hashCode * 59 + this.Username.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Username.GetHashCode();
+                }
                 if (this.FirstName != null)
-                    hashCode = hashCode * 59 + this.FirstName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.FirstName.GetHashCode();
+                }
                 if (this.LastName != null)
-                    hashCode = hashCode * 59 + this.LastName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.LastName.GetHashCode();
+                }
                 if (this.Email != null)
-                    hashCode = hashCode * 59 + this.Email.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Email.GetHashCode();
+                }
                 if (this.Password != null)
-                    hashCode = hashCode * 59 + this.Password.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Password.GetHashCode();
+                }
                 if (this.Phone != null)
-                    hashCode = hashCode * 59 + this.Phone.GetHashCode();
-                hashCode = hashCode * 59 + this.UserStatus.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Phone.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.UserStatus.GetHashCode();
                 if (this.ObjectWithNoDeclaredProps != null)
-                    hashCode = hashCode * 59 + this.ObjectWithNoDeclaredProps.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ObjectWithNoDeclaredProps.GetHashCode();
+                }
                 if (this.ObjectWithNoDeclaredPropsNullable != null)
-                    hashCode = hashCode * 59 + this.ObjectWithNoDeclaredPropsNullable.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ObjectWithNoDeclaredPropsNullable.GetHashCode();
+                }
                 if (this.AnyTypeProp != null)
-                    hashCode = hashCode * 59 + this.AnyTypeProp.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AnyTypeProp.GetHashCode();
+                }
                 if (this.AnyTypePropNullable != null)
-                    hashCode = hashCode * 59 + this.AnyTypePropNullable.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AnyTypePropNullable.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

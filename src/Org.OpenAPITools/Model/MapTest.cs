@@ -57,28 +57,8 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets MapOfEnumString
         /// </summary>
-
         [DataMember(Name = "map_of_enum_string", EmitDefaultValue = false)]
-        public Dictionary<string, InnerEnum> MapOfEnumString
-        {
-            get{ return _MapOfEnumString;}
-            set
-            {
-                _MapOfEnumString = value;
-                _flagMapOfEnumString = true;
-            }
-        }
-        private Dictionary<string, InnerEnum> _MapOfEnumString;
-        private bool _flagMapOfEnumString;
-
-        /// <summary>
-        /// Returns false as MapOfEnumString should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeMapOfEnumString()
-        {
-            return _flagMapOfEnumString;
-        }
+        public Dictionary<string, InnerEnum> MapOfEnumString { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="MapTest" /> class.
         /// </summary>
@@ -88,10 +68,10 @@ namespace Org.OpenAPITools.Model
         /// <param name="indirectMap">indirectMap.</param>
         public MapTest(Dictionary<string, Dictionary<string, string>> mapMapOfString = default(Dictionary<string, Dictionary<string, string>>), Dictionary<string, InnerEnum> mapOfEnumString = default(Dictionary<string, InnerEnum>), Dictionary<string, bool> directMap = default(Dictionary<string, bool>), Dictionary<string, bool> indirectMap = default(Dictionary<string, bool>))
         {
-            this._MapMapOfString = mapMapOfString;
-            this._MapOfEnumString = mapOfEnumString;
-            this._DirectMap = directMap;
-            this._IndirectMap = indirectMap;
+            this.MapMapOfString = mapMapOfString;
+            this.MapOfEnumString = mapOfEnumString;
+            this.DirectMap = directMap;
+            this.IndirectMap = indirectMap;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -99,74 +79,20 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MapMapOfString
         /// </summary>
         [DataMember(Name = "map_map_of_string", EmitDefaultValue = false)]
-        public Dictionary<string, Dictionary<string, string>> MapMapOfString
-        {
-            get{ return _MapMapOfString;}
-            set
-            {
-                _MapMapOfString = value;
-                _flagMapMapOfString = true;
-            }
-        }
-        private Dictionary<string, Dictionary<string, string>> _MapMapOfString;
-        private bool _flagMapMapOfString;
+        public Dictionary<string, Dictionary<string, string>> MapMapOfString { get; set; }
 
-        /// <summary>
-        /// Returns false as MapMapOfString should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeMapMapOfString()
-        {
-            return _flagMapMapOfString;
-        }
         /// <summary>
         /// Gets or Sets DirectMap
         /// </summary>
         [DataMember(Name = "direct_map", EmitDefaultValue = false)]
-        public Dictionary<string, bool> DirectMap
-        {
-            get{ return _DirectMap;}
-            set
-            {
-                _DirectMap = value;
-                _flagDirectMap = true;
-            }
-        }
-        private Dictionary<string, bool> _DirectMap;
-        private bool _flagDirectMap;
+        public Dictionary<string, bool> DirectMap { get; set; }
 
-        /// <summary>
-        /// Returns false as DirectMap should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeDirectMap()
-        {
-            return _flagDirectMap;
-        }
         /// <summary>
         /// Gets or Sets IndirectMap
         /// </summary>
         [DataMember(Name = "indirect_map", EmitDefaultValue = false)]
-        public Dictionary<string, bool> IndirectMap
-        {
-            get{ return _IndirectMap;}
-            set
-            {
-                _IndirectMap = value;
-                _flagIndirectMap = true;
-            }
-        }
-        private Dictionary<string, bool> _IndirectMap;
-        private bool _flagIndirectMap;
+        public Dictionary<string, bool> IndirectMap { get; set; }
 
-        /// <summary>
-        /// Returns false as IndirectMap should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeIndirectMap()
-        {
-            return _flagIndirectMap;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -179,7 +105,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class MapTest {\n");
             sb.Append("  MapMapOfString: ").Append(MapMapOfString).Append("\n");
             sb.Append("  MapOfEnumString: ").Append(MapOfEnumString).Append("\n");
@@ -229,14 +155,22 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.MapMapOfString != null)
-                    hashCode = hashCode * 59 + this.MapMapOfString.GetHashCode();
-                hashCode = hashCode * 59 + this.MapOfEnumString.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.MapMapOfString.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.MapOfEnumString.GetHashCode();
                 if (this.DirectMap != null)
-                    hashCode = hashCode * 59 + this.DirectMap.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.DirectMap.GetHashCode();
+                }
                 if (this.IndirectMap != null)
-                    hashCode = hashCode * 59 + this.IndirectMap.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.IndirectMap.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

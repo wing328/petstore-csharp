@@ -38,7 +38,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="justNumber">justNumber.</param>
         public NumberOnly(decimal justNumber = default(decimal))
         {
-            this._JustNumber = justNumber;
+            this.JustNumber = justNumber;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -46,26 +46,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets JustNumber
         /// </summary>
         [DataMember(Name = "JustNumber", EmitDefaultValue = false)]
-        public decimal JustNumber
-        {
-            get{ return _JustNumber;}
-            set
-            {
-                _JustNumber = value;
-                _flagJustNumber = true;
-            }
-        }
-        private decimal _JustNumber;
-        private bool _flagJustNumber;
+        public decimal JustNumber { get; set; }
 
-        /// <summary>
-        /// Returns false as JustNumber should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeJustNumber()
-        {
-            return _flagJustNumber;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -78,7 +60,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class NumberOnly {\n");
             sb.Append("  JustNumber: ").Append(JustNumber).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -124,9 +106,11 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.JustNumber.GetHashCode();
+                hashCode = (hashCode * 59) + this.JustNumber.GetHashCode();
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

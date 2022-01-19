@@ -39,8 +39,8 @@ namespace Org.OpenAPITools.Model
         /// <param name="specialModelName">specialModelName.</param>
         public SpecialModelName(long specialPropertyName = default(long), string specialModelName = default(string))
         {
-            this._SpecialPropertyName = specialPropertyName;
-            this.__SpecialModelName = specialModelName;
+            this.SpecialPropertyName = specialPropertyName;
+            this._SpecialModelName = specialModelName;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -48,50 +48,14 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets SpecialPropertyName
         /// </summary>
         [DataMember(Name = "$special[property.name]", EmitDefaultValue = false)]
-        public long SpecialPropertyName
-        {
-            get{ return _SpecialPropertyName;}
-            set
-            {
-                _SpecialPropertyName = value;
-                _flagSpecialPropertyName = true;
-            }
-        }
-        private long _SpecialPropertyName;
-        private bool _flagSpecialPropertyName;
+        public long SpecialPropertyName { get; set; }
 
-        /// <summary>
-        /// Returns false as SpecialPropertyName should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSpecialPropertyName()
-        {
-            return _flagSpecialPropertyName;
-        }
         /// <summary>
         /// Gets or Sets _SpecialModelName
         /// </summary>
         [DataMember(Name = "_special_model.name_", EmitDefaultValue = false)]
-        public string _SpecialModelName
-        {
-            get{ return __SpecialModelName;}
-            set
-            {
-                __SpecialModelName = value;
-                _flag_SpecialModelName = true;
-            }
-        }
-        private string __SpecialModelName;
-        private bool _flag_SpecialModelName;
+        public string _SpecialModelName { get; set; }
 
-        /// <summary>
-        /// Returns false as _SpecialModelName should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerialize_SpecialModelName()
-        {
-            return _flag_SpecialModelName;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -104,7 +68,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class SpecialModelName {\n");
             sb.Append("  SpecialPropertyName: ").Append(SpecialPropertyName).Append("\n");
             sb.Append("  _SpecialModelName: ").Append(_SpecialModelName).Append("\n");
@@ -151,11 +115,15 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.SpecialPropertyName.GetHashCode();
+                hashCode = (hashCode * 59) + this.SpecialPropertyName.GetHashCode();
                 if (this._SpecialModelName != null)
-                    hashCode = hashCode * 59 + this._SpecialModelName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this._SpecialModelName.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

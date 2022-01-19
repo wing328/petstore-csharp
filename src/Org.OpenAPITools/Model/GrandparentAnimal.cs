@@ -54,7 +54,7 @@ namespace Org.OpenAPITools.Model
             if (petType == null) {
                 throw new ArgumentNullException("petType is a required property for GrandparentAnimal and cannot be null");
             }
-            this._PetType = petType;
+            this.PetType = petType;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -62,26 +62,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets PetType
         /// </summary>
         [DataMember(Name = "pet_type", IsRequired = true, EmitDefaultValue = false)]
-        public string PetType
-        {
-            get{ return _PetType;}
-            set
-            {
-                _PetType = value;
-                _flagPetType = true;
-            }
-        }
-        private string _PetType;
-        private bool _flagPetType;
+        public string PetType { get; set; }
 
-        /// <summary>
-        /// Returns false as PetType should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializePetType()
-        {
-            return _flagPetType;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -94,7 +76,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class GrandparentAnimal {\n");
             sb.Append("  PetType: ").Append(PetType).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -141,9 +123,13 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.PetType != null)
-                    hashCode = hashCode * 59 + this.PetType.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.PetType.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

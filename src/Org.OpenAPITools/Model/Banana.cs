@@ -38,7 +38,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="lengthCm">lengthCm.</param>
         public Banana(decimal lengthCm = default(decimal))
         {
-            this._LengthCm = lengthCm;
+            this.LengthCm = lengthCm;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -46,26 +46,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets LengthCm
         /// </summary>
         [DataMember(Name = "lengthCm", EmitDefaultValue = false)]
-        public decimal LengthCm
-        {
-            get{ return _LengthCm;}
-            set
-            {
-                _LengthCm = value;
-                _flagLengthCm = true;
-            }
-        }
-        private decimal _LengthCm;
-        private bool _flagLengthCm;
+        public decimal LengthCm { get; set; }
 
-        /// <summary>
-        /// Returns false as LengthCm should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeLengthCm()
-        {
-            return _flagLengthCm;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -78,7 +60,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class Banana {\n");
             sb.Append("  LengthCm: ").Append(LengthCm).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -124,9 +106,11 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.LengthCm.GetHashCode();
+                hashCode = (hashCode * 59) + this.LengthCm.GetHashCode();
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

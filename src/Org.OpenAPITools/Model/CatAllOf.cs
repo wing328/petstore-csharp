@@ -38,7 +38,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="declawed">declawed.</param>
         public CatAllOf(bool declawed = default(bool))
         {
-            this._Declawed = declawed;
+            this.Declawed = declawed;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -46,26 +46,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Declawed
         /// </summary>
         [DataMember(Name = "declawed", EmitDefaultValue = true)]
-        public bool Declawed
-        {
-            get{ return _Declawed;}
-            set
-            {
-                _Declawed = value;
-                _flagDeclawed = true;
-            }
-        }
-        private bool _Declawed;
-        private bool _flagDeclawed;
+        public bool Declawed { get; set; }
 
-        /// <summary>
-        /// Returns false as Declawed should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeDeclawed()
-        {
-            return _flagDeclawed;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -78,7 +60,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class CatAllOf {\n");
             sb.Append("  Declawed: ").Append(Declawed).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -124,9 +106,11 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Declawed.GetHashCode();
+                hashCode = (hashCode * 59) + this.Declawed.GetHashCode();
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }
