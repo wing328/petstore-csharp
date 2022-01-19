@@ -38,7 +38,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="_client">_client.</param>
         public ModelClient(string _client = default(string))
         {
-            this.__Client = _client;
+            this._Client = _client;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -46,26 +46,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets _Client
         /// </summary>
         [DataMember(Name = "client", EmitDefaultValue = false)]
-        public string _Client
-        {
-            get{ return __Client;}
-            set
-            {
-                __Client = value;
-                _flag_Client = true;
-            }
-        }
-        private string __Client;
-        private bool _flag_Client;
+        public string _Client { get; set; }
 
-        /// <summary>
-        /// Returns false as _Client should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerialize_Client()
-        {
-            return _flag_Client;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -78,7 +60,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ModelClient {\n");
             sb.Append("  _Client: ").Append(_Client).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -125,9 +107,13 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this._Client != null)
-                    hashCode = hashCode * 59 + this._Client.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this._Client.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

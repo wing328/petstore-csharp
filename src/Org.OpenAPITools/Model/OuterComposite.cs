@@ -40,9 +40,9 @@ namespace Org.OpenAPITools.Model
         /// <param name="myBoolean">myBoolean.</param>
         public OuterComposite(decimal myNumber = default(decimal), string myString = default(string), bool myBoolean = default(bool))
         {
-            this._MyNumber = myNumber;
-            this._MyString = myString;
-            this._MyBoolean = myBoolean;
+            this.MyNumber = myNumber;
+            this.MyString = myString;
+            this.MyBoolean = myBoolean;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -50,74 +50,20 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MyNumber
         /// </summary>
         [DataMember(Name = "my_number", EmitDefaultValue = false)]
-        public decimal MyNumber
-        {
-            get{ return _MyNumber;}
-            set
-            {
-                _MyNumber = value;
-                _flagMyNumber = true;
-            }
-        }
-        private decimal _MyNumber;
-        private bool _flagMyNumber;
+        public decimal MyNumber { get; set; }
 
-        /// <summary>
-        /// Returns false as MyNumber should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeMyNumber()
-        {
-            return _flagMyNumber;
-        }
         /// <summary>
         /// Gets or Sets MyString
         /// </summary>
         [DataMember(Name = "my_string", EmitDefaultValue = false)]
-        public string MyString
-        {
-            get{ return _MyString;}
-            set
-            {
-                _MyString = value;
-                _flagMyString = true;
-            }
-        }
-        private string _MyString;
-        private bool _flagMyString;
+        public string MyString { get; set; }
 
-        /// <summary>
-        /// Returns false as MyString should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeMyString()
-        {
-            return _flagMyString;
-        }
         /// <summary>
         /// Gets or Sets MyBoolean
         /// </summary>
         [DataMember(Name = "my_boolean", EmitDefaultValue = true)]
-        public bool MyBoolean
-        {
-            get{ return _MyBoolean;}
-            set
-            {
-                _MyBoolean = value;
-                _flagMyBoolean = true;
-            }
-        }
-        private bool _MyBoolean;
-        private bool _flagMyBoolean;
+        public bool MyBoolean { get; set; }
 
-        /// <summary>
-        /// Returns false as MyBoolean should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeMyBoolean()
-        {
-            return _flagMyBoolean;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -130,7 +76,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class OuterComposite {\n");
             sb.Append("  MyNumber: ").Append(MyNumber).Append("\n");
             sb.Append("  MyString: ").Append(MyString).Append("\n");
@@ -178,12 +124,16 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.MyNumber.GetHashCode();
+                hashCode = (hashCode * 59) + this.MyNumber.GetHashCode();
                 if (this.MyString != null)
-                    hashCode = hashCode * 59 + this.MyString.GetHashCode();
-                hashCode = hashCode * 59 + this.MyBoolean.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.MyString.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.MyBoolean.GetHashCode();
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

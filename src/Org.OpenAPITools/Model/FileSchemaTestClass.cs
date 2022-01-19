@@ -39,8 +39,8 @@ namespace Org.OpenAPITools.Model
         /// <param name="files">files.</param>
         public FileSchemaTestClass(File file = default(File), List<File> files = default(List<File>))
         {
-            this._File = file;
-            this._Files = files;
+            this.File = file;
+            this.Files = files;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -48,50 +48,14 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets File
         /// </summary>
         [DataMember(Name = "file", EmitDefaultValue = false)]
-        public File File
-        {
-            get{ return _File;}
-            set
-            {
-                _File = value;
-                _flagFile = true;
-            }
-        }
-        private File _File;
-        private bool _flagFile;
+        public File File { get; set; }
 
-        /// <summary>
-        /// Returns false as File should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeFile()
-        {
-            return _flagFile;
-        }
         /// <summary>
         /// Gets or Sets Files
         /// </summary>
         [DataMember(Name = "files", EmitDefaultValue = false)]
-        public List<File> Files
-        {
-            get{ return _Files;}
-            set
-            {
-                _Files = value;
-                _flagFiles = true;
-            }
-        }
-        private List<File> _Files;
-        private bool _flagFiles;
+        public List<File> Files { get; set; }
 
-        /// <summary>
-        /// Returns false as Files should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeFiles()
-        {
-            return _flagFiles;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -104,7 +68,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class FileSchemaTestClass {\n");
             sb.Append("  File: ").Append(File).Append("\n");
             sb.Append("  Files: ").Append(Files).Append("\n");
@@ -152,11 +116,17 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.File != null)
-                    hashCode = hashCode * 59 + this.File.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.File.GetHashCode();
+                }
                 if (this.Files != null)
-                    hashCode = hashCode * 59 + this.Files.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Files.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

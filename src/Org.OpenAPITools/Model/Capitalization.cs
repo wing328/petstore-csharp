@@ -43,12 +43,12 @@ namespace Org.OpenAPITools.Model
         /// <param name="aTTNAME">Name of the pet .</param>
         public Capitalization(string smallCamel = default(string), string capitalCamel = default(string), string smallSnake = default(string), string capitalSnake = default(string), string sCAETHFlowPoints = default(string), string aTTNAME = default(string))
         {
-            this._SmallCamel = smallCamel;
-            this._CapitalCamel = capitalCamel;
-            this._SmallSnake = smallSnake;
-            this._CapitalSnake = capitalSnake;
-            this._SCAETHFlowPoints = sCAETHFlowPoints;
-            this._ATT_NAME = aTTNAME;
+            this.SmallCamel = smallCamel;
+            this.CapitalCamel = capitalCamel;
+            this.SmallSnake = smallSnake;
+            this.CapitalSnake = capitalSnake;
+            this.SCAETHFlowPoints = sCAETHFlowPoints;
+            this.ATT_NAME = aTTNAME;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -56,147 +56,39 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets SmallCamel
         /// </summary>
         [DataMember(Name = "smallCamel", EmitDefaultValue = false)]
-        public string SmallCamel
-        {
-            get{ return _SmallCamel;}
-            set
-            {
-                _SmallCamel = value;
-                _flagSmallCamel = true;
-            }
-        }
-        private string _SmallCamel;
-        private bool _flagSmallCamel;
+        public string SmallCamel { get; set; }
 
-        /// <summary>
-        /// Returns false as SmallCamel should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSmallCamel()
-        {
-            return _flagSmallCamel;
-        }
         /// <summary>
         /// Gets or Sets CapitalCamel
         /// </summary>
         [DataMember(Name = "CapitalCamel", EmitDefaultValue = false)]
-        public string CapitalCamel
-        {
-            get{ return _CapitalCamel;}
-            set
-            {
-                _CapitalCamel = value;
-                _flagCapitalCamel = true;
-            }
-        }
-        private string _CapitalCamel;
-        private bool _flagCapitalCamel;
+        public string CapitalCamel { get; set; }
 
-        /// <summary>
-        /// Returns false as CapitalCamel should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeCapitalCamel()
-        {
-            return _flagCapitalCamel;
-        }
         /// <summary>
         /// Gets or Sets SmallSnake
         /// </summary>
         [DataMember(Name = "small_Snake", EmitDefaultValue = false)]
-        public string SmallSnake
-        {
-            get{ return _SmallSnake;}
-            set
-            {
-                _SmallSnake = value;
-                _flagSmallSnake = true;
-            }
-        }
-        private string _SmallSnake;
-        private bool _flagSmallSnake;
+        public string SmallSnake { get; set; }
 
-        /// <summary>
-        /// Returns false as SmallSnake should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSmallSnake()
-        {
-            return _flagSmallSnake;
-        }
         /// <summary>
         /// Gets or Sets CapitalSnake
         /// </summary>
         [DataMember(Name = "Capital_Snake", EmitDefaultValue = false)]
-        public string CapitalSnake
-        {
-            get{ return _CapitalSnake;}
-            set
-            {
-                _CapitalSnake = value;
-                _flagCapitalSnake = true;
-            }
-        }
-        private string _CapitalSnake;
-        private bool _flagCapitalSnake;
+        public string CapitalSnake { get; set; }
 
-        /// <summary>
-        /// Returns false as CapitalSnake should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeCapitalSnake()
-        {
-            return _flagCapitalSnake;
-        }
         /// <summary>
         /// Gets or Sets SCAETHFlowPoints
         /// </summary>
         [DataMember(Name = "SCA_ETH_Flow_Points", EmitDefaultValue = false)]
-        public string SCAETHFlowPoints
-        {
-            get{ return _SCAETHFlowPoints;}
-            set
-            {
-                _SCAETHFlowPoints = value;
-                _flagSCAETHFlowPoints = true;
-            }
-        }
-        private string _SCAETHFlowPoints;
-        private bool _flagSCAETHFlowPoints;
+        public string SCAETHFlowPoints { get; set; }
 
-        /// <summary>
-        /// Returns false as SCAETHFlowPoints should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeSCAETHFlowPoints()
-        {
-            return _flagSCAETHFlowPoints;
-        }
         /// <summary>
         /// Name of the pet 
         /// </summary>
         /// <value>Name of the pet </value>
         [DataMember(Name = "ATT_NAME", EmitDefaultValue = false)]
-        public string ATT_NAME
-        {
-            get{ return _ATT_NAME;}
-            set
-            {
-                _ATT_NAME = value;
-                _flagATT_NAME = true;
-            }
-        }
-        private string _ATT_NAME;
-        private bool _flagATT_NAME;
+        public string ATT_NAME { get; set; }
 
-        /// <summary>
-        /// Returns false as ATT_NAME should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeATT_NAME()
-        {
-            return _flagATT_NAME;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -209,7 +101,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class Capitalization {\n");
             sb.Append("  SmallCamel: ").Append(SmallCamel).Append("\n");
             sb.Append("  CapitalCamel: ").Append(CapitalCamel).Append("\n");
@@ -261,19 +153,33 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.SmallCamel != null)
-                    hashCode = hashCode * 59 + this.SmallCamel.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.SmallCamel.GetHashCode();
+                }
                 if (this.CapitalCamel != null)
-                    hashCode = hashCode * 59 + this.CapitalCamel.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.CapitalCamel.GetHashCode();
+                }
                 if (this.SmallSnake != null)
-                    hashCode = hashCode * 59 + this.SmallSnake.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.SmallSnake.GetHashCode();
+                }
                 if (this.CapitalSnake != null)
-                    hashCode = hashCode * 59 + this.CapitalSnake.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.CapitalSnake.GetHashCode();
+                }
                 if (this.SCAETHFlowPoints != null)
-                    hashCode = hashCode * 59 + this.SCAETHFlowPoints.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.SCAETHFlowPoints.GetHashCode();
+                }
                 if (this.ATT_NAME != null)
-                    hashCode = hashCode * 59 + this.ATT_NAME.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ATT_NAME.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

@@ -50,7 +50,7 @@ namespace Org.OpenAPITools.Model
             if (className == null) {
                 throw new ArgumentNullException("className is a required property for BasquePig and cannot be null");
             }
-            this._ClassName = className;
+            this.ClassName = className;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -58,26 +58,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ClassName
         /// </summary>
         [DataMember(Name = "className", IsRequired = true, EmitDefaultValue = false)]
-        public string ClassName
-        {
-            get{ return _ClassName;}
-            set
-            {
-                _ClassName = value;
-                _flagClassName = true;
-            }
-        }
-        private string _ClassName;
-        private bool _flagClassName;
+        public string ClassName { get; set; }
 
-        /// <summary>
-        /// Returns false as ClassName should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeClassName()
-        {
-            return _flagClassName;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -90,7 +72,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class BasquePig {\n");
             sb.Append("  ClassName: ").Append(ClassName).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -137,9 +119,13 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.ClassName != null)
-                    hashCode = hashCode * 59 + this.ClassName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ClassName.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

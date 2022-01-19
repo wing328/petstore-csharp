@@ -50,7 +50,7 @@ namespace Org.OpenAPITools.Model
             if (shapeType == null) {
                 throw new ArgumentNullException("shapeType is a required property for ShapeInterface and cannot be null");
             }
-            this._ShapeType = shapeType;
+            this.ShapeType = shapeType;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -58,26 +58,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ShapeType
         /// </summary>
         [DataMember(Name = "shapeType", IsRequired = true, EmitDefaultValue = false)]
-        public string ShapeType
-        {
-            get{ return _ShapeType;}
-            set
-            {
-                _ShapeType = value;
-                _flagShapeType = true;
-            }
-        }
-        private string _ShapeType;
-        private bool _flagShapeType;
+        public string ShapeType { get; set; }
 
-        /// <summary>
-        /// Returns false as ShapeType should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeShapeType()
-        {
-            return _flagShapeType;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -90,7 +72,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ShapeInterface {\n");
             sb.Append("  ShapeType: ").Append(ShapeType).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -137,9 +119,13 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.ShapeType != null)
-                    hashCode = hashCode * 59 + this.ShapeType.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ShapeType.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

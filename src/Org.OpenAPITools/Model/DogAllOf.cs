@@ -38,7 +38,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="breed">breed.</param>
         public DogAllOf(string breed = default(string))
         {
-            this._Breed = breed;
+            this.Breed = breed;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -46,26 +46,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Breed
         /// </summary>
         [DataMember(Name = "breed", EmitDefaultValue = false)]
-        public string Breed
-        {
-            get{ return _Breed;}
-            set
-            {
-                _Breed = value;
-                _flagBreed = true;
-            }
-        }
-        private string _Breed;
-        private bool _flagBreed;
+        public string Breed { get; set; }
 
-        /// <summary>
-        /// Returns false as Breed should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeBreed()
-        {
-            return _flagBreed;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -78,7 +60,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class DogAllOf {\n");
             sb.Append("  Breed: ").Append(Breed).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -125,9 +107,13 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.Breed != null)
-                    hashCode = hashCode * 59 + this.Breed.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Breed.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

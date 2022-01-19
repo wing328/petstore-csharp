@@ -38,7 +38,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="arrayNumber">arrayNumber.</param>
         public ArrayOfNumberOnly(List<decimal> arrayNumber = default(List<decimal>))
         {
-            this._ArrayNumber = arrayNumber;
+            this.ArrayNumber = arrayNumber;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -46,26 +46,8 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ArrayNumber
         /// </summary>
         [DataMember(Name = "ArrayNumber", EmitDefaultValue = false)]
-        public List<decimal> ArrayNumber
-        {
-            get{ return _ArrayNumber;}
-            set
-            {
-                _ArrayNumber = value;
-                _flagArrayNumber = true;
-            }
-        }
-        private List<decimal> _ArrayNumber;
-        private bool _flagArrayNumber;
+        public List<decimal> ArrayNumber { get; set; }
 
-        /// <summary>
-        /// Returns false as ArrayNumber should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeArrayNumber()
-        {
-            return _flagArrayNumber;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -78,7 +60,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ArrayOfNumberOnly {\n");
             sb.Append("  ArrayNumber: ").Append(ArrayNumber).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -125,9 +107,13 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.ArrayNumber != null)
-                    hashCode = hashCode * 59 + this.ArrayNumber.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ArrayNumber.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

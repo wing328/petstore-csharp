@@ -39,8 +39,8 @@ namespace Org.OpenAPITools.Model
         /// <param name="origin">origin.</param>
         public Apple(string cultivar = default(string), string origin = default(string))
         {
-            this._Cultivar = cultivar;
-            this._Origin = origin;
+            this.Cultivar = cultivar;
+            this.Origin = origin;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -48,50 +48,14 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Cultivar
         /// </summary>
         [DataMember(Name = "cultivar", EmitDefaultValue = false)]
-        public string Cultivar
-        {
-            get{ return _Cultivar;}
-            set
-            {
-                _Cultivar = value;
-                _flagCultivar = true;
-            }
-        }
-        private string _Cultivar;
-        private bool _flagCultivar;
+        public string Cultivar { get; set; }
 
-        /// <summary>
-        /// Returns false as Cultivar should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeCultivar()
-        {
-            return _flagCultivar;
-        }
         /// <summary>
         /// Gets or Sets Origin
         /// </summary>
         [DataMember(Name = "origin", EmitDefaultValue = false)]
-        public string Origin
-        {
-            get{ return _Origin;}
-            set
-            {
-                _Origin = value;
-                _flagOrigin = true;
-            }
-        }
-        private string _Origin;
-        private bool _flagOrigin;
+        public string Origin { get; set; }
 
-        /// <summary>
-        /// Returns false as Origin should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeOrigin()
-        {
-            return _flagOrigin;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -104,7 +68,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class Apple {\n");
             sb.Append("  Cultivar: ").Append(Cultivar).Append("\n");
             sb.Append("  Origin: ").Append(Origin).Append("\n");
@@ -152,11 +116,17 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.Cultivar != null)
-                    hashCode = hashCode * 59 + this.Cultivar.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Cultivar.GetHashCode();
+                }
                 if (this.Origin != null)
-                    hashCode = hashCode * 59 + this.Origin.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Origin.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

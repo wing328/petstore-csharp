@@ -41,10 +41,10 @@ namespace Org.OpenAPITools.Model
         /// <param name="bars">bars.</param>
         public ObjectWithDeprecatedFields(string uuid = default(string), decimal id = default(decimal), DeprecatedObject deprecatedRef = default(DeprecatedObject), List<string> bars = default(List<string>))
         {
-            this._Uuid = uuid;
-            this._Id = id;
-            this._DeprecatedRef = deprecatedRef;
-            this._Bars = bars;
+            this.Uuid = uuid;
+            this.Id = id;
+            this.DeprecatedRef = deprecatedRef;
+            this.Bars = bars;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -52,101 +52,29 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Uuid
         /// </summary>
         [DataMember(Name = "uuid", EmitDefaultValue = false)]
-        public string Uuid
-        {
-            get{ return _Uuid;}
-            set
-            {
-                _Uuid = value;
-                _flagUuid = true;
-            }
-        }
-        private string _Uuid;
-        private bool _flagUuid;
+        public string Uuid { get; set; }
 
-        /// <summary>
-        /// Returns false as Uuid should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeUuid()
-        {
-            return _flagUuid;
-        }
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
         [Obsolete]
-        public decimal Id
-        {
-            get{ return _Id;}
-            set
-            {
-                _Id = value;
-                _flagId = true;
-            }
-        }
-        private decimal _Id;
-        private bool _flagId;
+        public decimal Id { get; set; }
 
-        /// <summary>
-        /// Returns false as Id should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeId()
-        {
-            return _flagId;
-        }
         /// <summary>
         /// Gets or Sets DeprecatedRef
         /// </summary>
         [DataMember(Name = "deprecatedRef", EmitDefaultValue = false)]
         [Obsolete]
-        public DeprecatedObject DeprecatedRef
-        {
-            get{ return _DeprecatedRef;}
-            set
-            {
-                _DeprecatedRef = value;
-                _flagDeprecatedRef = true;
-            }
-        }
-        private DeprecatedObject _DeprecatedRef;
-        private bool _flagDeprecatedRef;
+        public DeprecatedObject DeprecatedRef { get; set; }
 
-        /// <summary>
-        /// Returns false as DeprecatedRef should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeDeprecatedRef()
-        {
-            return _flagDeprecatedRef;
-        }
         /// <summary>
         /// Gets or Sets Bars
         /// </summary>
         [DataMember(Name = "bars", EmitDefaultValue = false)]
         [Obsolete]
-        public List<string> Bars
-        {
-            get{ return _Bars;}
-            set
-            {
-                _Bars = value;
-                _flagBars = true;
-            }
-        }
-        private List<string> _Bars;
-        private bool _flagBars;
+        public List<string> Bars { get; set; }
 
-        /// <summary>
-        /// Returns false as Bars should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeBars()
-        {
-            return _flagBars;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -159,7 +87,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class ObjectWithDeprecatedFields {\n");
             sb.Append("  Uuid: ").Append(Uuid).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
@@ -209,14 +137,22 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.Uuid != null)
-                    hashCode = hashCode * 59 + this.Uuid.GetHashCode();
-                hashCode = hashCode * 59 + this.Id.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Uuid.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Id.GetHashCode();
                 if (this.DeprecatedRef != null)
-                    hashCode = hashCode * 59 + this.DeprecatedRef.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.DeprecatedRef.GetHashCode();
+                }
                 if (this.Bars != null)
-                    hashCode = hashCode * 59 + this.Bars.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Bars.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

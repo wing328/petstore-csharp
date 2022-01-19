@@ -40,9 +40,9 @@ namespace Org.OpenAPITools.Model
         /// <param name="map">map.</param>
         public MixedPropertiesAndAdditionalPropertiesClass(Guid uuid = default(Guid), DateTime dateTime = default(DateTime), Dictionary<string, Animal> map = default(Dictionary<string, Animal>))
         {
-            this._Uuid = uuid;
-            this._DateTime = dateTime;
-            this._Map = map;
+            this.Uuid = uuid;
+            this.DateTime = dateTime;
+            this.Map = map;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -50,74 +50,20 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Uuid
         /// </summary>
         [DataMember(Name = "uuid", EmitDefaultValue = false)]
-        public Guid Uuid
-        {
-            get{ return _Uuid;}
-            set
-            {
-                _Uuid = value;
-                _flagUuid = true;
-            }
-        }
-        private Guid _Uuid;
-        private bool _flagUuid;
+        public Guid Uuid { get; set; }
 
-        /// <summary>
-        /// Returns false as Uuid should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeUuid()
-        {
-            return _flagUuid;
-        }
         /// <summary>
         /// Gets or Sets DateTime
         /// </summary>
         [DataMember(Name = "dateTime", EmitDefaultValue = false)]
-        public DateTime DateTime
-        {
-            get{ return _DateTime;}
-            set
-            {
-                _DateTime = value;
-                _flagDateTime = true;
-            }
-        }
-        private DateTime _DateTime;
-        private bool _flagDateTime;
+        public DateTime DateTime { get; set; }
 
-        /// <summary>
-        /// Returns false as DateTime should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeDateTime()
-        {
-            return _flagDateTime;
-        }
         /// <summary>
         /// Gets or Sets Map
         /// </summary>
         [DataMember(Name = "map", EmitDefaultValue = false)]
-        public Dictionary<string, Animal> Map
-        {
-            get{ return _Map;}
-            set
-            {
-                _Map = value;
-                _flagMap = true;
-            }
-        }
-        private Dictionary<string, Animal> _Map;
-        private bool _flagMap;
+        public Dictionary<string, Animal> Map { get; set; }
 
-        /// <summary>
-        /// Returns false as Map should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeMap()
-        {
-            return _flagMap;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -130,7 +76,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class MixedPropertiesAndAdditionalPropertiesClass {\n");
             sb.Append("  Uuid: ").Append(Uuid).Append("\n");
             sb.Append("  DateTime: ").Append(DateTime).Append("\n");
@@ -179,13 +125,21 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.Uuid != null)
-                    hashCode = hashCode * 59 + this.Uuid.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Uuid.GetHashCode();
+                }
                 if (this.DateTime != null)
-                    hashCode = hashCode * 59 + this.DateTime.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.DateTime.GetHashCode();
+                }
                 if (this.Map != null)
-                    hashCode = hashCode * 59 + this.Map.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Map.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

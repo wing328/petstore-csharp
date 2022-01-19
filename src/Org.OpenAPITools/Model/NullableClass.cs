@@ -49,316 +49,100 @@ namespace Org.OpenAPITools.Model
         /// <param name="objectItemsNullable">objectItemsNullable.</param>
         public NullableClass(int? integerProp = default(int?), decimal? numberProp = default(decimal?), bool? booleanProp = default(bool?), string stringProp = default(string), DateTime? dateProp = default(DateTime?), DateTime? datetimeProp = default(DateTime?), List<Object> arrayNullableProp = default(List<Object>), List<Object> arrayAndItemsNullableProp = default(List<Object>), List<Object> arrayItemsNullable = default(List<Object>), Dictionary<string, Object> objectNullableProp = default(Dictionary<string, Object>), Dictionary<string, Object> objectAndItemsNullableProp = default(Dictionary<string, Object>), Dictionary<string, Object> objectItemsNullable = default(Dictionary<string, Object>)) : base()
         {
-            this._IntegerProp = integerProp;
-            this._NumberProp = numberProp;
-            this._BooleanProp = booleanProp;
-            this._StringProp = stringProp;
-            this._DateProp = dateProp;
-            this._DatetimeProp = datetimeProp;
-            this._ArrayNullableProp = arrayNullableProp;
-            this._ArrayAndItemsNullableProp = arrayAndItemsNullableProp;
-            this._ArrayItemsNullable = arrayItemsNullable;
-            this._ObjectNullableProp = objectNullableProp;
-            this._ObjectAndItemsNullableProp = objectAndItemsNullableProp;
-            this._ObjectItemsNullable = objectItemsNullable;
+            this.IntegerProp = integerProp;
+            this.NumberProp = numberProp;
+            this.BooleanProp = booleanProp;
+            this.StringProp = stringProp;
+            this.DateProp = dateProp;
+            this.DatetimeProp = datetimeProp;
+            this.ArrayNullableProp = arrayNullableProp;
+            this.ArrayAndItemsNullableProp = arrayAndItemsNullableProp;
+            this.ArrayItemsNullable = arrayItemsNullable;
+            this.ObjectNullableProp = objectNullableProp;
+            this.ObjectAndItemsNullableProp = objectAndItemsNullableProp;
+            this.ObjectItemsNullable = objectItemsNullable;
         }
 
         /// <summary>
         /// Gets or Sets IntegerProp
         /// </summary>
         [DataMember(Name = "integer_prop", EmitDefaultValue = true)]
-        public int? IntegerProp
-        {
-            get{ return _IntegerProp;}
-            set
-            {
-                _IntegerProp = value;
-                _flagIntegerProp = true;
-            }
-        }
-        private int? _IntegerProp;
-        private bool _flagIntegerProp;
+        public int? IntegerProp { get; set; }
 
-        /// <summary>
-        /// Returns false as IntegerProp should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeIntegerProp()
-        {
-            return _flagIntegerProp;
-        }
         /// <summary>
         /// Gets or Sets NumberProp
         /// </summary>
         [DataMember(Name = "number_prop", EmitDefaultValue = true)]
-        public decimal? NumberProp
-        {
-            get{ return _NumberProp;}
-            set
-            {
-                _NumberProp = value;
-                _flagNumberProp = true;
-            }
-        }
-        private decimal? _NumberProp;
-        private bool _flagNumberProp;
+        public decimal? NumberProp { get; set; }
 
-        /// <summary>
-        /// Returns false as NumberProp should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeNumberProp()
-        {
-            return _flagNumberProp;
-        }
         /// <summary>
         /// Gets or Sets BooleanProp
         /// </summary>
         [DataMember(Name = "boolean_prop", EmitDefaultValue = true)]
-        public bool? BooleanProp
-        {
-            get{ return _BooleanProp;}
-            set
-            {
-                _BooleanProp = value;
-                _flagBooleanProp = true;
-            }
-        }
-        private bool? _BooleanProp;
-        private bool _flagBooleanProp;
+        public bool? BooleanProp { get; set; }
 
-        /// <summary>
-        /// Returns false as BooleanProp should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeBooleanProp()
-        {
-            return _flagBooleanProp;
-        }
         /// <summary>
         /// Gets or Sets StringProp
         /// </summary>
         [DataMember(Name = "string_prop", EmitDefaultValue = true)]
-        public string StringProp
-        {
-            get{ return _StringProp;}
-            set
-            {
-                _StringProp = value;
-                _flagStringProp = true;
-            }
-        }
-        private string _StringProp;
-        private bool _flagStringProp;
+        public string StringProp { get; set; }
 
-        /// <summary>
-        /// Returns false as StringProp should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeStringProp()
-        {
-            return _flagStringProp;
-        }
         /// <summary>
         /// Gets or Sets DateProp
         /// </summary>
-        [JsonConverter(typeof(OpenAPIDateConverter))]
         [DataMember(Name = "date_prop", EmitDefaultValue = true)]
-        public DateTime? DateProp
-        {
-            get{ return _DateProp;}
-            set
-            {
-                _DateProp = value;
-                _flagDateProp = true;
-            }
-        }
-        private DateTime? _DateProp;
-        private bool _flagDateProp;
+        [JsonConverter(typeof(OpenAPIDateConverter))]
+        public DateTime? DateProp { get; set; }
 
-        /// <summary>
-        /// Returns false as DateProp should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeDateProp()
-        {
-            return _flagDateProp;
-        }
         /// <summary>
         /// Gets or Sets DatetimeProp
         /// </summary>
         [DataMember(Name = "datetime_prop", EmitDefaultValue = true)]
-        public DateTime? DatetimeProp
-        {
-            get{ return _DatetimeProp;}
-            set
-            {
-                _DatetimeProp = value;
-                _flagDatetimeProp = true;
-            }
-        }
-        private DateTime? _DatetimeProp;
-        private bool _flagDatetimeProp;
+        public DateTime? DatetimeProp { get; set; }
 
-        /// <summary>
-        /// Returns false as DatetimeProp should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeDatetimeProp()
-        {
-            return _flagDatetimeProp;
-        }
         /// <summary>
         /// Gets or Sets ArrayNullableProp
         /// </summary>
         [DataMember(Name = "array_nullable_prop", EmitDefaultValue = true)]
-        public List<Object> ArrayNullableProp
-        {
-            get{ return _ArrayNullableProp;}
-            set
-            {
-                _ArrayNullableProp = value;
-                _flagArrayNullableProp = true;
-            }
-        }
-        private List<Object> _ArrayNullableProp;
-        private bool _flagArrayNullableProp;
+        public List<Object> ArrayNullableProp { get; set; }
 
-        /// <summary>
-        /// Returns false as ArrayNullableProp should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeArrayNullableProp()
-        {
-            return _flagArrayNullableProp;
-        }
         /// <summary>
         /// Gets or Sets ArrayAndItemsNullableProp
         /// </summary>
         [DataMember(Name = "array_and_items_nullable_prop", EmitDefaultValue = true)]
-        public List<Object> ArrayAndItemsNullableProp
-        {
-            get{ return _ArrayAndItemsNullableProp;}
-            set
-            {
-                _ArrayAndItemsNullableProp = value;
-                _flagArrayAndItemsNullableProp = true;
-            }
-        }
-        private List<Object> _ArrayAndItemsNullableProp;
-        private bool _flagArrayAndItemsNullableProp;
+        public List<Object> ArrayAndItemsNullableProp { get; set; }
 
-        /// <summary>
-        /// Returns false as ArrayAndItemsNullableProp should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeArrayAndItemsNullableProp()
-        {
-            return _flagArrayAndItemsNullableProp;
-        }
         /// <summary>
         /// Gets or Sets ArrayItemsNullable
         /// </summary>
         [DataMember(Name = "array_items_nullable", EmitDefaultValue = false)]
-        public List<Object> ArrayItemsNullable
-        {
-            get{ return _ArrayItemsNullable;}
-            set
-            {
-                _ArrayItemsNullable = value;
-                _flagArrayItemsNullable = true;
-            }
-        }
-        private List<Object> _ArrayItemsNullable;
-        private bool _flagArrayItemsNullable;
+        public List<Object> ArrayItemsNullable { get; set; }
 
-        /// <summary>
-        /// Returns false as ArrayItemsNullable should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeArrayItemsNullable()
-        {
-            return _flagArrayItemsNullable;
-        }
         /// <summary>
         /// Gets or Sets ObjectNullableProp
         /// </summary>
         [DataMember(Name = "object_nullable_prop", EmitDefaultValue = true)]
-        public Dictionary<string, Object> ObjectNullableProp
-        {
-            get{ return _ObjectNullableProp;}
-            set
-            {
-                _ObjectNullableProp = value;
-                _flagObjectNullableProp = true;
-            }
-        }
-        private Dictionary<string, Object> _ObjectNullableProp;
-        private bool _flagObjectNullableProp;
+        public Dictionary<string, Object> ObjectNullableProp { get; set; }
 
-        /// <summary>
-        /// Returns false as ObjectNullableProp should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeObjectNullableProp()
-        {
-            return _flagObjectNullableProp;
-        }
         /// <summary>
         /// Gets or Sets ObjectAndItemsNullableProp
         /// </summary>
         [DataMember(Name = "object_and_items_nullable_prop", EmitDefaultValue = true)]
-        public Dictionary<string, Object> ObjectAndItemsNullableProp
-        {
-            get{ return _ObjectAndItemsNullableProp;}
-            set
-            {
-                _ObjectAndItemsNullableProp = value;
-                _flagObjectAndItemsNullableProp = true;
-            }
-        }
-        private Dictionary<string, Object> _ObjectAndItemsNullableProp;
-        private bool _flagObjectAndItemsNullableProp;
+        public Dictionary<string, Object> ObjectAndItemsNullableProp { get; set; }
 
-        /// <summary>
-        /// Returns false as ObjectAndItemsNullableProp should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeObjectAndItemsNullableProp()
-        {
-            return _flagObjectAndItemsNullableProp;
-        }
         /// <summary>
         /// Gets or Sets ObjectItemsNullable
         /// </summary>
         [DataMember(Name = "object_items_nullable", EmitDefaultValue = false)]
-        public Dictionary<string, Object> ObjectItemsNullable
-        {
-            get{ return _ObjectItemsNullable;}
-            set
-            {
-                _ObjectItemsNullable = value;
-                _flagObjectItemsNullable = true;
-            }
-        }
-        private Dictionary<string, Object> _ObjectItemsNullable;
-        private bool _flagObjectItemsNullable;
+        public Dictionary<string, Object> ObjectItemsNullable { get; set; }
 
-        /// <summary>
-        /// Returns false as ObjectItemsNullable should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeObjectItemsNullable()
-        {
-            return _flagObjectItemsNullable;
-        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class NullableClass {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  IntegerProp: ").Append(IntegerProp).Append("\n");
@@ -416,29 +200,53 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = base.GetHashCode();
                 if (this.IntegerProp != null)
-                    hashCode = hashCode * 59 + this.IntegerProp.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.IntegerProp.GetHashCode();
+                }
                 if (this.NumberProp != null)
-                    hashCode = hashCode * 59 + this.NumberProp.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.NumberProp.GetHashCode();
+                }
                 if (this.BooleanProp != null)
-                    hashCode = hashCode * 59 + this.BooleanProp.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.BooleanProp.GetHashCode();
+                }
                 if (this.StringProp != null)
-                    hashCode = hashCode * 59 + this.StringProp.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.StringProp.GetHashCode();
+                }
                 if (this.DateProp != null)
-                    hashCode = hashCode * 59 + this.DateProp.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.DateProp.GetHashCode();
+                }
                 if (this.DatetimeProp != null)
-                    hashCode = hashCode * 59 + this.DatetimeProp.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.DatetimeProp.GetHashCode();
+                }
                 if (this.ArrayNullableProp != null)
-                    hashCode = hashCode * 59 + this.ArrayNullableProp.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ArrayNullableProp.GetHashCode();
+                }
                 if (this.ArrayAndItemsNullableProp != null)
-                    hashCode = hashCode * 59 + this.ArrayAndItemsNullableProp.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ArrayAndItemsNullableProp.GetHashCode();
+                }
                 if (this.ArrayItemsNullable != null)
-                    hashCode = hashCode * 59 + this.ArrayItemsNullable.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ArrayItemsNullable.GetHashCode();
+                }
                 if (this.ObjectNullableProp != null)
-                    hashCode = hashCode * 59 + this.ObjectNullableProp.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ObjectNullableProp.GetHashCode();
+                }
                 if (this.ObjectAndItemsNullableProp != null)
-                    hashCode = hashCode * 59 + this.ObjectAndItemsNullableProp.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ObjectAndItemsNullableProp.GetHashCode();
+                }
                 if (this.ObjectItemsNullable != null)
-                    hashCode = hashCode * 59 + this.ObjectItemsNullable.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ObjectItemsNullable.GetHashCode();
+                }
                 return hashCode;
             }
         }

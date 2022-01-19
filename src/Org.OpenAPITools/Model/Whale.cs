@@ -52,9 +52,9 @@ namespace Org.OpenAPITools.Model
             if (className == null) {
                 throw new ArgumentNullException("className is a required property for Whale and cannot be null");
             }
-            this._ClassName = className;
-            this._HasBaleen = hasBaleen;
-            this._HasTeeth = hasTeeth;
+            this.ClassName = className;
+            this.HasBaleen = hasBaleen;
+            this.HasTeeth = hasTeeth;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -62,74 +62,20 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets HasBaleen
         /// </summary>
         [DataMember(Name = "hasBaleen", EmitDefaultValue = true)]
-        public bool HasBaleen
-        {
-            get{ return _HasBaleen;}
-            set
-            {
-                _HasBaleen = value;
-                _flagHasBaleen = true;
-            }
-        }
-        private bool _HasBaleen;
-        private bool _flagHasBaleen;
+        public bool HasBaleen { get; set; }
 
-        /// <summary>
-        /// Returns false as HasBaleen should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeHasBaleen()
-        {
-            return _flagHasBaleen;
-        }
         /// <summary>
         /// Gets or Sets HasTeeth
         /// </summary>
         [DataMember(Name = "hasTeeth", EmitDefaultValue = true)]
-        public bool HasTeeth
-        {
-            get{ return _HasTeeth;}
-            set
-            {
-                _HasTeeth = value;
-                _flagHasTeeth = true;
-            }
-        }
-        private bool _HasTeeth;
-        private bool _flagHasTeeth;
+        public bool HasTeeth { get; set; }
 
-        /// <summary>
-        /// Returns false as HasTeeth should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeHasTeeth()
-        {
-            return _flagHasTeeth;
-        }
         /// <summary>
         /// Gets or Sets ClassName
         /// </summary>
         [DataMember(Name = "className", IsRequired = true, EmitDefaultValue = false)]
-        public string ClassName
-        {
-            get{ return _ClassName;}
-            set
-            {
-                _ClassName = value;
-                _flagClassName = true;
-            }
-        }
-        private string _ClassName;
-        private bool _flagClassName;
+        public string ClassName { get; set; }
 
-        /// <summary>
-        /// Returns false as ClassName should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeClassName()
-        {
-            return _flagClassName;
-        }
         /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
@@ -142,7 +88,7 @@ namespace Org.OpenAPITools.Model
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class Whale {\n");
             sb.Append("  HasBaleen: ").Append(HasBaleen).Append("\n");
             sb.Append("  HasTeeth: ").Append(HasTeeth).Append("\n");
@@ -190,12 +136,16 @@ namespace Org.OpenAPITools.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.HasBaleen.GetHashCode();
-                hashCode = hashCode * 59 + this.HasTeeth.GetHashCode();
+                hashCode = (hashCode * 59) + this.HasBaleen.GetHashCode();
+                hashCode = (hashCode * 59) + this.HasTeeth.GetHashCode();
                 if (this.ClassName != null)
-                    hashCode = hashCode * 59 + this.ClassName.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.ClassName.GetHashCode();
+                }
                 if (this.AdditionalProperties != null)
-                    hashCode = hashCode * 59 + this.AdditionalProperties.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.AdditionalProperties.GetHashCode();
+                }
                 return hashCode;
             }
         }

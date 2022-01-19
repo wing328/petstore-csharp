@@ -48,65 +48,29 @@ namespace Org.OpenAPITools.Model
             if (cultivar == null) {
                 throw new ArgumentNullException("cultivar is a required property for AppleReq and cannot be null");
             }
-            this._Cultivar = cultivar;
-            this._Mealy = mealy;
+            this.Cultivar = cultivar;
+            this.Mealy = mealy;
         }
 
         /// <summary>
         /// Gets or Sets Cultivar
         /// </summary>
         [DataMember(Name = "cultivar", IsRequired = true, EmitDefaultValue = false)]
-        public string Cultivar
-        {
-            get{ return _Cultivar;}
-            set
-            {
-                _Cultivar = value;
-                _flagCultivar = true;
-            }
-        }
-        private string _Cultivar;
-        private bool _flagCultivar;
+        public string Cultivar { get; set; }
 
-        /// <summary>
-        /// Returns false as Cultivar should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeCultivar()
-        {
-            return _flagCultivar;
-        }
         /// <summary>
         /// Gets or Sets Mealy
         /// </summary>
         [DataMember(Name = "mealy", EmitDefaultValue = true)]
-        public bool Mealy
-        {
-            get{ return _Mealy;}
-            set
-            {
-                _Mealy = value;
-                _flagMealy = true;
-            }
-        }
-        private bool _Mealy;
-        private bool _flagMealy;
+        public bool Mealy { get; set; }
 
-        /// <summary>
-        /// Returns false as Mealy should not be serialized given that it's read-only.
-        /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeMealy()
-        {
-            return _flagMealy;
-        }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
-            var sb = new StringBuilder();
+            StringBuilder sb = new StringBuilder();
             sb.Append("class AppleReq {\n");
             sb.Append("  Cultivar: ").Append(Cultivar).Append("\n");
             sb.Append("  Mealy: ").Append(Mealy).Append("\n");
@@ -153,8 +117,10 @@ namespace Org.OpenAPITools.Model
             {
                 int hashCode = 41;
                 if (this.Cultivar != null)
-                    hashCode = hashCode * 59 + this.Cultivar.GetHashCode();
-                hashCode = hashCode * 59 + this.Mealy.GetHashCode();
+                {
+                    hashCode = (hashCode * 59) + this.Cultivar.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Mealy.GetHashCode();
                 return hashCode;
             }
         }
