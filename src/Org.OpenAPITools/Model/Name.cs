@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Model for testing model name same as property name
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "Name")]
     public partial class Name : IEquatable<Name>, IValidatableObject
     {

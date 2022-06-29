@@ -31,6 +31,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Mammal
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [JsonConverter(typeof(MammalJsonConverter))]
     [DataContract(Name = "mammal")]
     public partial class Mammal : AbstractOpenAPISchema, IEquatable<Mammal>, IValidatableObject

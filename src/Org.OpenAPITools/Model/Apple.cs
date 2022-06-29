@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Apple
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "apple")]
     public partial class Apple : IEquatable<Apple>, IValidatableObject
     {

@@ -30,6 +30,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// ParentPet
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "ParentPet")]
     [JsonConverter(typeof(JsonSubtypes), "PetType")]
     [JsonSubtypes.KnownSubType(typeof(ChildCat), "ChildCat")]

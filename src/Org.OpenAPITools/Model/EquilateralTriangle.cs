@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// EquilateralTriangle
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "EquilateralTriangle")]
     public partial class EquilateralTriangle : IEquatable<EquilateralTriangle>, IValidatableObject
     {

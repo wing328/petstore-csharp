@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// ModelClient
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "_Client")]
     public partial class ModelClient : IEquatable<ModelClient>, IValidatableObject
     {

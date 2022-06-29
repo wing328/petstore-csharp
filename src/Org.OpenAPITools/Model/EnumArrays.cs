@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// EnumArrays
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "EnumArrays")]
     public partial class EnumArrays : IEquatable<EnumArrays>, IValidatableObject
     {

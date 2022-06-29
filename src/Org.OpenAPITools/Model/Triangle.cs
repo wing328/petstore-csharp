@@ -31,6 +31,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Triangle
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [JsonConverter(typeof(TriangleJsonConverter))]
     [DataContract(Name = "Triangle")]
     public partial class Triangle : AbstractOpenAPISchema, IEquatable<Triangle>, IValidatableObject

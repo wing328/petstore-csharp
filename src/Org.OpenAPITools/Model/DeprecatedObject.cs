@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// DeprecatedObject
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "DeprecatedObject")]
     public partial class DeprecatedObject : IEquatable<DeprecatedObject>, IValidatableObject
     {

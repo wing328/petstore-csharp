@@ -31,6 +31,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Pig
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [JsonConverter(typeof(PigJsonConverter))]
     [DataContract(Name = "Pig")]
     public partial class Pig : AbstractOpenAPISchema, IEquatable<Pig>, IValidatableObject

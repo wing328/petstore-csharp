@@ -30,6 +30,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Cat
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "Cat")]
     [JsonConverter(typeof(JsonSubtypes), "ClassName")]
     public partial class Cat : Animal, IEquatable<Cat>, IValidatableObject

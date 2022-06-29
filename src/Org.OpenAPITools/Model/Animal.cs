@@ -30,6 +30,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Animal
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "Animal")]
     [JsonConverter(typeof(JsonSubtypes), "ClassName")]
     [JsonSubtypes.KnownSubType(typeof(Cat), "Cat")]

@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Drawing
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "Drawing")]
     public partial class Drawing : Dictionary<String, Fruit>, IEquatable<Drawing>, IValidatableObject
     {

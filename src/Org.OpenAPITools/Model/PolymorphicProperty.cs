@@ -30,6 +30,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// PolymorphicProperty
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [JsonConverter(typeof(PolymorphicPropertyJsonConverter))]
     [DataContract(Name = "PolymorphicProperty")]
     public partial class PolymorphicProperty : AbstractOpenAPISchema, IEquatable<PolymorphicProperty>, IValidatableObject

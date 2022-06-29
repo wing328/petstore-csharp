@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Must be named &#x60;File&#x60; for test.
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "File")]
     public partial class File : IEquatable<File>, IValidatableObject
     {

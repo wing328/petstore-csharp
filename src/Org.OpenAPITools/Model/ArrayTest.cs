@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// ArrayTest
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "ArrayTest")]
     public partial class ArrayTest : IEquatable<ArrayTest>, IValidatableObject
     {

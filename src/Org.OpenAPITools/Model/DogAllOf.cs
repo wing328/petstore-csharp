@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// DogAllOf
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "Dog_allOf")]
     public partial class DogAllOf : IEquatable<DogAllOf>, IValidatableObject
     {

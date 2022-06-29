@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// ScaleneTriangle
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "ScaleneTriangle")]
     public partial class ScaleneTriangle : IEquatable<ScaleneTriangle>, IValidatableObject
     {

@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// TriangleInterface
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "TriangleInterface")]
     public partial class TriangleInterface : IEquatable<TriangleInterface>, IValidatableObject
     {

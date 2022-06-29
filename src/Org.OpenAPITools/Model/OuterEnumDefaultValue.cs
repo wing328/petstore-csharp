@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Defines OuterEnumDefaultValue
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [JsonConverter(typeof(StringEnumConverter))]
     public enum OuterEnumDefaultValue
     {

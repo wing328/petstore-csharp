@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// ShapeInterface
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "ShapeInterface")]
     public partial class ShapeInterface : IEquatable<ShapeInterface>, IValidatableObject
     {

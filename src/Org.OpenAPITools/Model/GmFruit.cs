@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// GmFruit
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [JsonConverter(typeof(GmFruitJsonConverter))]
     [DataContract(Name = "gmFruit")]
     public partial class GmFruit : AbstractOpenAPISchema, IEquatable<GmFruit>, IValidatableObject

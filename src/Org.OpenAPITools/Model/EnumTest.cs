@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// EnumTest
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "Enum_Test")]
     public partial class EnumTest : IEquatable<EnumTest>, IValidatableObject
     {

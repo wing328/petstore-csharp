@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Zebra
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "zebra")]
     public partial class Zebra : Dictionary<String, Object>, IEquatable<Zebra>, IValidatableObject
     {

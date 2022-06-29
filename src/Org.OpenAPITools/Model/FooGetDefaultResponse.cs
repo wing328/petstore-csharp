@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// FooGetDefaultResponse
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "_foo_get_default_response")]
     public partial class FooGetDefaultResponse : IEquatable<FooGetDefaultResponse>, IValidatableObject
     {

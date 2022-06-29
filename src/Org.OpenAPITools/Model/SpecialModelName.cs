@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// SpecialModelName
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "_special_model.name_")]
     public partial class SpecialModelName : IEquatable<SpecialModelName>, IValidatableObject
     {

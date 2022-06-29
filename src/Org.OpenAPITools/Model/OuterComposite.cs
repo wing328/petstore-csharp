@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// OuterComposite
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "OuterComposite")]
     public partial class OuterComposite : IEquatable<OuterComposite>, IValidatableObject
     {

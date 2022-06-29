@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// MapTest
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "MapTest")]
     public partial class MapTest : IEquatable<MapTest>, IValidatableObject
     {

@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// ApiResponse
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "ApiResponse")]
     public partial class ApiResponse : IEquatable<ApiResponse>, IValidatableObject
     {

@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Defines OuterEnumInteger
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     public enum OuterEnumInteger
     {
         /// <summary>

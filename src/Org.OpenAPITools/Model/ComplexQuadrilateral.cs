@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// ComplexQuadrilateral
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "ComplexQuadrilateral")]
     public partial class ComplexQuadrilateral : IEquatable<ComplexQuadrilateral>, IValidatableObject
     {

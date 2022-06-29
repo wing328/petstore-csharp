@@ -31,6 +31,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Quadrilateral
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [JsonConverter(typeof(QuadrilateralJsonConverter))]
     [DataContract(Name = "Quadrilateral")]
     public partial class Quadrilateral : AbstractOpenAPISchema, IEquatable<Quadrilateral>, IValidatableObject

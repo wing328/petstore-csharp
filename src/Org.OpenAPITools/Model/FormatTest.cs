@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// FormatTest
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "format_test")]
     public partial class FormatTest : IEquatable<FormatTest>, IValidatableObject
     {

@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// NullableClass
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "NullableClass")]
     public partial class NullableClass : Dictionary<String, Object>, IEquatable<NullableClass>, IValidatableObject
     {

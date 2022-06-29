@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// FileSchemaTestClass
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "FileSchemaTestClass")]
     public partial class FileSchemaTestClass : IEquatable<FileSchemaTestClass>, IValidatableObject
     {

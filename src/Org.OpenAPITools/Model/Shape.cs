@@ -31,6 +31,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Shape
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [JsonConverter(typeof(ShapeJsonConverter))]
     [DataContract(Name = "Shape")]
     public partial class Shape : AbstractOpenAPISchema, IEquatable<Shape>, IValidatableObject

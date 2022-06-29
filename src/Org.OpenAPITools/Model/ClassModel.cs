@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Model for testing model with \&quot;_class\&quot; property
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "ClassModel")]
     public partial class ClassModel : IEquatable<ClassModel>, IValidatableObject
     {

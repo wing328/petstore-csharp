@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// ArrayOfNumberOnly
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "ArrayOfNumberOnly")]
     public partial class ArrayOfNumberOnly : IEquatable<ArrayOfNumberOnly>, IValidatableObject
     {

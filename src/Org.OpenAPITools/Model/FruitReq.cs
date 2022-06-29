@@ -30,6 +30,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// FruitReq
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [JsonConverter(typeof(FruitReqJsonConverter))]
     [DataContract(Name = "fruitReq")]
     public partial class FruitReq : AbstractOpenAPISchema, IEquatable<FruitReq>, IValidatableObject

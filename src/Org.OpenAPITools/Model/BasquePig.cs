@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// BasquePig
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "BasquePig")]
     public partial class BasquePig : IEquatable<BasquePig>, IValidatableObject
     {

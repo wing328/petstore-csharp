@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// IsoscelesTriangle
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "IsoscelesTriangle")]
     public partial class IsoscelesTriangle : IEquatable<IsoscelesTriangle>, IValidatableObject
     {

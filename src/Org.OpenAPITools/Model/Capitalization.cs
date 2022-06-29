@@ -29,6 +29,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// Capitalization
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [DataContract(Name = "Capitalization")]
     public partial class Capitalization : IEquatable<Capitalization>, IValidatableObject
     {

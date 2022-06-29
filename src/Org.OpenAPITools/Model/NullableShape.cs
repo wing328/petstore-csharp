@@ -31,6 +31,8 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// The value may be a shape or the &#39;null&#39; value. The &#39;nullable&#39; attribute was introduced in OAS schema &gt;&#x3D; 3.0 and has been deprecated in OAS schema &gt;&#x3D; 3.1.
     /// </summary>
+    [CLSCompliant(true)]
+    [ComVisible(true)]
     [JsonConverter(typeof(NullableShapeJsonConverter))]
     [DataContract(Name = "NullableShape")]
     public partial class NullableShape : AbstractOpenAPISchema, IEquatable<NullableShape>, IValidatableObject
